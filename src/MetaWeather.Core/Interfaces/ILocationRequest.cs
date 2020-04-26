@@ -1,4 +1,4 @@
-﻿namespace MetaWeather.Specifications
+﻿namespace MetaWeather.Core.Interfaces
 {
     public interface ILocationRequest
     {

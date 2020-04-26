@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace MetaWeather.Specifications
+namespace MetaWeather.Core.Interfaces
 {
     public interface IApiProxy
     {

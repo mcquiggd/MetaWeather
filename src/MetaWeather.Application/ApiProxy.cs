@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using MetaWeather.Core.Entities;
+using MetaWeather.Core.Interfaces;
 
-namespace MetaWeather.Specifications
+namespace MetaWeather.Application
 {
-    internal class ApiProxy : IApiProxy
+    public class ApiProxy : IApiProxy
     {
         public async Task<ILocationResponse> SubmitLocationRequest(ILocationRequest locationRequest)
         {
@@ -11,7 +13,8 @@ namespace MetaWeather.Specifications
             var location  = new Location {Title = "Belfast", LocationType = "City", Woeid = 44544};
             locations.Add(location);
 
-            return await Task.FromResult(new LocationResponse {Locations = locations});
+            return await Task.FromResult(new LocationResponse
+                {StatusCode = 200, Locations = locations});
         }
     }
 }

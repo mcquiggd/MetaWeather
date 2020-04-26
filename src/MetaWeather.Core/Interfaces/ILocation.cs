@@ -1,19 +1,19 @@
 ﻿using Newtonsoft.Json;
 
-namespace MetaWeather.Specifications
+namespace MetaWeather.Core.Interfaces
 {
     public interface ILocation
     {
         [JsonProperty("title")]
-        public string Title { get; set; }
+        string Title { get; set; }
 
         [JsonProperty("location_type")]
-        public string LocationType { get; set; }
+        string LocationType { get; set; }
 
         [JsonProperty("woeid")]
-        public int  Woeid { get; set; }
+        int Woeid { get; set; }
 
         [JsonProperty("latt_long")]
-        public string LattLong { get; set; }
+        string LattLong { get; set; }
     }
 }

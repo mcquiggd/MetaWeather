@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\MetaWeather.Api\MetaWeather.Api.csproj" />
+    <ProjectReference Include="..\..\src\MetaWeather.Application\MetaWeather.Application.csproj" />
+    <ProjectReference Include="..\..\src\MetaWeather.Core\MetaWeather.Core.csproj" />
     <ProjectReference Include="..\MetaWeather.Tests.Common\MetaWeather.Tests.Common.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,9 @@
 ﻿using System.Linq;
 using FluentAssertions;
 using FluentAssertions.Execution;
+using MetaWeather.Application;
+using MetaWeather.Core.Entities;
+using MetaWeather.Core.Interfaces;
 using Xbehave;
 
 namespace MetaWeather.Specifications
@@ -14,6 +17,7 @@ namespace MetaWeather.Specifications
     {
         [Scenario]
         [Example("Belfast", 44544)]
+        [Example("Birmingham", 12723)]
         public void Api_Submit_ValidLocationRequest_ReturnsCorrectWoeid(string cityName,
             int                                                                expectedWoeid,
             IApiProxy                                                          apiProxy,
@@ -37,11 +41,12 @@ namespace MetaWeather.Specifications
                 .x(async () => locationResponse =
                     await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
 
-            $"Then the location response should contain the correct CityName {cityName} and expected Woeid {expectedWoeid}"
+            $"Then the location response should have a StatusCode of 200, CityName {cityName} and Woeid {expectedWoeid}"
                 .x(() =>
                 {
                     using (new AssertionScope())
                     {
+                        locationResponse.StatusCode.Should().Be(200);
                         locationResponse.Locations.Should().HaveCount(1);
                         locationResponse.Locations.First().Woeid.Should().Be(expectedWoeid);
                     }
@@ -49,9 +54,9 @@ namespace MetaWeather.Specifications
         }
 
         [Scenario]
-        [Example("NotBelfast", 44544)]
+        [Example("NotBelfast")]
+        [Example("NotBirmingham")]
         public void Api_Submit_InvalidLocationRequest_ReturnsError(string cityName,
-            int                                                           expectedWoeid,
             IApiProxy                                                     apiProxy,
             ILocationRequest                                              locationRequest,
             ILocationResponse                                             locationResponse)
@@ -73,12 +78,13 @@ namespace MetaWeather.Specifications
                 .x(async () => locationResponse =
                     await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
 
-            "Then the location response should be empty"
+            "Then the location response should return StatusCode 404, and Locations should be empty"
                 .x(() =>
                 {
                     using (new AssertionScope())
                     {
                         locationResponse.Locations.Should().BeEmpty();
+                        locationResponse.StatusCode.Should().Be(404);
                     }
                 });
         }

@@ -47,5 +47,40 @@ namespace MetaWeather.Specifications
                     }
                 });
         }
+
+        [Scenario]
+        [Example("NotBelfast", 44544)]
+        public void Api_Submit_InvalidLocationRequest_ReturnsError(string cityName,
+            int                                                           expectedWoeid,
+            IApiProxy                                                     apiProxy,
+            ILocationRequest                                              locationRequest,
+            ILocationResponse                                             locationResponse)
+        {
+            $"Given a cityName value of {cityName}"
+                .x(() =>
+                {
+                    locationRequest = new LocationRequest
+                    {
+                        CityName = cityName
+                    };
+                });
+
+            "And an ApiProxy"
+                .x(() => apiProxy = new ApiProxy());
+
+
+            "When the location request is submitted"
+                .x(async () => locationResponse =
+                    await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
+
+            "Then the location response should be empty"
+                .x(() =>
+                {
+                    using (new AssertionScope())
+                    {
+                        locationResponse.Locations.Should().BeEmpty();
+                    }
+                });
+        }
     }
 }

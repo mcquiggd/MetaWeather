@@ -1,12 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace MetaWeather.Specifications
 {
-    public class IApiProxy
+    public interface IApiProxy
     {
-        public IApiProxy() { }
-
-        public Task<ILocationResponse> SubmitLocationRequest(ILocationRequest locationRequest) => throw new NotImplementedException();
+        Task<ILocationResponse> SubmitLocationRequest(ILocationRequest locationRequest);
     }
 }

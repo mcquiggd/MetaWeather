@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Refit" Version="5.1.67" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MetaWeather.Core\MetaWeather.Core.csproj" />
   </ItemGroup>
 

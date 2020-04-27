@@ -1,9 +1,16 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using MetaWeather.Application;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
+using Newtonsoft.Json;
+using NSubstitute;
+using Refit;
+using RichardSzalay.MockHttp;
 using Xbehave;
 
 namespace MetaWeather.Specifications
@@ -15,12 +22,65 @@ namespace MetaWeather.Specifications
         */
 
     {
+        private IMetaweatherService    _metaweatherService;
+        private MockHttpMessageHandler _mockHttpMessageHandler;
+
+        [Background]
+        public void Background()
+        {
+            _mockHttpMessageHandler = new MockHttpMessageHandler();
+
+            //TODO: Refactor to a Builder Pattern
+            var belfastLocation = new List<Location>
+            {
+                new Location
+                {
+                    Title        = "Belfast",
+                    Woeid        = 44544,
+                    LocationType = "City"
+                }
+            };
+
+            var birminghamLocations = new List<Location>
+            {
+                new Location
+                {
+                    Title        = "Birmingham",
+                    Woeid        = 12723,
+                    LocationType = "City"
+                },
+
+                new Location
+                {
+                    Title        = "Birmingham",
+                    Woeid        = 2364559,
+                    LocationType = "City"
+                }
+            };
+
+            _mockHttpMessageHandler.When("https://www.metaweather.com/api/location/search")
+                .WithQueryString("query", "Belfast")
+                .Respond(HttpStatusCode.OK, new StringContent(JsonConvert.SerializeObject(belfastLocation)));
+
+            _mockHttpMessageHandler.When("https://www.metaweather.com/api/location/search")
+                .WithQueryString("query", "Birmingham")
+                .Respond(HttpStatusCode.OK, new StringContent(JsonConvert.SerializeObject(birminghamLocations)));
+
+            var settings = new RefitSettings
+            {
+                HttpMessageHandlerFactory = () => _mockHttpMessageHandler
+            };
+
+            _metaweatherService = RestService.For<IMetaweatherService>("https://www.metaweather.com", settings);
+        }
+
         [Scenario]
-        [Example("Belfast", 44544)]
-        [Example("Birmingham", 12723)]
+        [Example("Belfast", 1, 44544)]
+        [Example("Birmingham", 2, 12723)]
         public void Api_Submit_ValidLocationRequest_ReturnsCorrectWoeid(string cityName,
+            int                                                                expectedCount,
             int                                                                expectedWoeid,
-            IApiProxy                                                          apiProxy,
+            ApiProxy                                                           apiProxy,
             ILocationRequest                                                   locationRequest,
             ILocationResponse                                                  locationResponse)
         {
@@ -34,20 +94,20 @@ namespace MetaWeather.Specifications
                 });
 
             "And an ApiProxy"
-                .x(() => apiProxy = new ApiProxy());
+                .x(() => { apiProxy = new ApiProxy(_metaweatherService); });
 
 
             "When the location request is submitted"
                 .x(async () => locationResponse =
                     await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
 
-            $"Then the location response should have a StatusCode of 200, CityName {cityName} and Woeid {expectedWoeid}"
+            $"Then the location response should have a StatusCode of Ok, CityName {cityName} and Woeid {expectedWoeid}"
                 .x(() =>
                 {
                     using (new AssertionScope())
                     {
-                        locationResponse.StatusCode.Should().Be(200);
-                        locationResponse.Locations.Should().HaveCount(1);
+                        locationResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+                        locationResponse.Locations.Should().HaveCount(expectedCount);
                         locationResponse.Locations.First().Woeid.Should().Be(expectedWoeid);
                     }
                 });
@@ -57,7 +117,7 @@ namespace MetaWeather.Specifications
         [Example("NotBelfast")]
         [Example("NotBirmingham")]
         public void Api_Submit_InvalidLocationRequest_ReturnsError(string cityName,
-            IApiProxy                                                     apiProxy,
+            ApiProxy                                                      apiProxy,
             ILocationRequest                                              locationRequest,
             ILocationResponse                                             locationResponse)
         {
@@ -71,7 +131,7 @@ namespace MetaWeather.Specifications
                 });
 
             "And an ApiProxy"
-                .x(() => apiProxy = new ApiProxy());
+                .x(() => apiProxy = new ApiProxy(Substitute.For<IMetaweatherService>()));
 
 
             "When the location request is submitted"
@@ -83,8 +143,8 @@ namespace MetaWeather.Specifications
                 {
                     using (new AssertionScope())
                     {
+                        locationResponse.StatusCode.Should().Be(HttpStatusCode.NotFound);
                         locationResponse.Locations.Should().BeEmpty();
-                        locationResponse.StatusCode.Should().Be(404);
                     }
                 });
         }

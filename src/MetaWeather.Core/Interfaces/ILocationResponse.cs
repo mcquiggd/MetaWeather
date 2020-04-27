@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Net;
+using MetaWeather.Core.Entities;
 
 namespace MetaWeather.Core.Interfaces
 {
     public interface ILocationResponse
     {
-        List<ILocation> Locations  { get; set; }
-        int             StatusCode { get; set; }
+        List<Location> Locations  { get; set; }
+        HttpStatusCode StatusCode { get; set; }
     }
 }

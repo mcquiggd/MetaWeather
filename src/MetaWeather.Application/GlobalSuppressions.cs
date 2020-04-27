@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Spellchecker", "CRRSP06:A misspelled word has been found", Justification = "<Pending>", Scope = "member", Target = "~M:MetaWeather.Application.IMetaWeatherService.GetLocationByWeather(System.Int32)~System.Threading.Tasks.Task{Refit.ApiResponse{System.Collections.Generic.List{MetaWeather.Core.Entities.Forecast}}}")]
+[assembly: SuppressMessage("Spellchecker", "CRRSP06:A misspelled word has been found", Justification = "<Pending>", Scope = "member", Target = "~M:MetaWeather.Application.IMetaWeatherService.GetWeatherByWoeId(System.Int32)~System.Threading.Tasks.Task{Refit.ApiResponse{MetaWeather.Core.Entities.WeatherResponse}}")]

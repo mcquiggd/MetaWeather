@@ -34,7 +34,7 @@ public class TestWeatherResponseBuilder
                                            await Task.FromResult(new HttpResponseMessage(_weatherResponse.StatusCode)
                                                {
                                                    Content =
-                                               new StringContent(JsonConvert.SerializeObject(_weatherResponse.Forecasts))
+                                               new StringContent(JsonConvert.SerializeObject(_weatherResponse))
                                                });
 
     public TestWeatherResponseBuilder Default()

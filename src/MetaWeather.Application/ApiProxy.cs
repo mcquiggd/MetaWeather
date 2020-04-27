@@ -55,14 +55,14 @@ namespace MetaWeather.Application
                             { StatusCode = apiResponse.StatusCode, Forecasts = null });
                     }
 
-                    if(!apiResponse.Content.Any())
+                    if(!apiResponse.Content.Forecasts.Any())
                     {
                         return await Task.FromResult(new WeatherResponse
                             { StatusCode = HttpStatusCode.NotFound, Forecasts = null });
                     }
 
                     return await Task.FromResult(new WeatherResponse
-                        { StatusCode = HttpStatusCode.OK, Forecasts = apiResponse.Content });
+                        { StatusCode = HttpStatusCode.OK, Forecasts = apiResponse.Content.Forecasts });
                 }
             } catch(Exception ex) when ((ex is ApiException) || (ex is WebException))
             {

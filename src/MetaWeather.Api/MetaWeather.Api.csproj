@@ -8,5 +8,14 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Refit.HttpClientFactory" Version="5.1.67" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MetaWeather.Application\MetaWeather.Application.csproj" />
+    <ProjectReference Include="..\MetaWeather.Core\MetaWeather.Core.csproj" />
+  </ItemGroup>
+
 
 </Project>

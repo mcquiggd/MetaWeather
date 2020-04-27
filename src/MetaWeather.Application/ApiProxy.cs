@@ -10,18 +10,18 @@ namespace MetaWeather.Application
 {
     public class ApiProxy : IApiProxy
     {
-        private readonly IMetaweatherService _metaweatherService;
+        private readonly IMetaWeatherService _metaWeatherService;
 
-        public ApiProxy(IMetaweatherService metaweatherService)
+        public ApiProxy(IMetaWeatherService metaWeatherService)
         {
-            _metaweatherService = metaweatherService;
+            _metaWeatherService = metaWeatherService;
         }
 
         public async Task<LocationResponse> SubmitLocationRequest(ILocationRequest locationRequest)
         {
             try
             {
-                using (var apiResponse = await _metaweatherService.GetLocationByCityName(locationRequest.CityName))
+                using (var apiResponse = await _metaWeatherService.GetLocationByCityName(locationRequest.CityName))
                 {
                     if (!apiResponse.IsSuccessStatusCode)
                         return await Task.FromResult(new LocationResponse

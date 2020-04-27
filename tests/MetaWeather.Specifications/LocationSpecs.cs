@@ -1,76 +1,46 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
-using System.Net.Http;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using MetaWeather.Application;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
-using Newtonsoft.Json;
+using MetaWeather.Tests.Common;
 using Refit;
 using RichardSzalay.MockHttp;
 using Xbehave;
 
 namespace MetaWeather.Specifications
 {
-    public class MetaWeatherSpecs
+    public class LocationSpecs
         /*
         The application will communicate to the following REST API: https://www.metaweather.com/api/
         and retrieve the next 5 days of weather for Belfast.
         */
-
     {
-        private IMetaweatherService    _metaweatherService;
+        private IMetaWeatherService    _metaWeatherService;
         private MockHttpMessageHandler _mockHttpMessageHandler;
 
         [Background]
         public void Background()
         {
             _mockHttpMessageHandler = new MockHttpMessageHandler();
-
-            //TODO: Refactor to a Builder Pattern
-            var belfastLocation = new List<Location>
-            {
-                new Location
-                {
-                    Title        = "Belfast",
-                    Woeid        = 44544,
-                    LocationType = "City"
-                }
-            };
-
-            var birminghamLocations = new List<Location>
-            {
-                new Location
-                {
-                    Title        = "Birmingham",
-                    Woeid        = 12723,
-                    LocationType = "City"
-                },
-
-                new Location
-                {
-                    Title        = "Birmingham",
-                    Woeid        = 2364559,
-                    LocationType = "City"
-                }
-            };
+            var builder = new TestLocationResponseBuilder();
 
             _mockHttpMessageHandler.When("https://www.metaweather.com/api/location/search")
                 .WithQueryString("query", "Belfast")
-                .Respond(HttpStatusCode.OK, new StringContent(JsonConvert.SerializeObject(belfastLocation)));
+                .Respond(builder.Default().WithBelfast().BuildHttpResponse());
 
             _mockHttpMessageHandler.When("https://www.metaweather.com/api/location/search")
                 .WithQueryString("query", "Birmingham")
-                .Respond(HttpStatusCode.OK, new StringContent(JsonConvert.SerializeObject(birminghamLocations)));
+                .Respond(builder.Default().WithBirmingham().BuildHttpResponse());
 
             var settings = new RefitSettings
             {
                 HttpMessageHandlerFactory = () => _mockHttpMessageHandler
             };
 
-            _metaweatherService = RestService.For<IMetaweatherService>("https://www.metaweather.com", settings);
+            _metaWeatherService = RestService.For<IMetaWeatherService>("https://www.metaweather.com", settings);
         }
 
         [Scenario]
@@ -93,7 +63,7 @@ namespace MetaWeather.Specifications
                 });
 
             "And an ApiProxy"
-                .x(() => { apiProxy = new ApiProxy(_metaweatherService); });
+                .x(() => { apiProxy = new ApiProxy(_metaWeatherService); });
 
 
             "When the location request is submitted"
@@ -130,7 +100,7 @@ namespace MetaWeather.Specifications
                 });
 
             "And an ApiProxy"
-                .x(() => { apiProxy = new ApiProxy(_metaweatherService); });
+                .x(() => { apiProxy = new ApiProxy(_metaWeatherService); });
 
 
             "When the location request is submitted"

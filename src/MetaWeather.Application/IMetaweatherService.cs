@@ -5,7 +5,7 @@ using Refit;
 
 namespace MetaWeather.Application
 {
-    public interface IMetaweatherService
+    public interface IMetaWeatherService
     {
         [Get("/api/location/search?query={cityName}")]
         Task<ApiResponse<List<Location>>> GetLocationByCityName(string cityName);

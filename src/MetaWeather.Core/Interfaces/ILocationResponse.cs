@@ -6,7 +6,8 @@ namespace MetaWeather.Core.Interfaces
 {
     public interface ILocationResponse
     {
-        List<Location> Locations  { get; set; }
+        List<Location> Locations { get; set; }
+
         HttpStatusCode StatusCode { get; set; }
     }
 }

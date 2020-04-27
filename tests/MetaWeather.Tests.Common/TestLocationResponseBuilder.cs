@@ -31,7 +31,7 @@ namespace MetaWeather.Tests.Common
 
         public TestLocationResponseBuilder WithBelfast()
         {
-            _locationResponse.Locations.Add(new Location { Title = "Belfast", Woeid = 44544, LocationType = "City" });
+            _locationResponse.Locations.Add(new Location { Title = "Belfast", WoeId = 44544, LocationType = "City" });
 
             return this;
         }
@@ -42,10 +42,10 @@ namespace MetaWeather.Tests.Common
                 .AddRange(new List<Location>
                 {
                     new Location
-                    { Title = "Birmingham", Woeid = 12723, LocationType = "City" },
+                    { Title = "Birmingham", WoeId = 12723, LocationType = "City" },
 
                     new Location
-                    { Title = "Birmingham", Woeid = 2364559, LocationType = "City" }
+                    { Title = "Birmingham", WoeId = 2364559, LocationType = "City" }
                 });
 
             return this;

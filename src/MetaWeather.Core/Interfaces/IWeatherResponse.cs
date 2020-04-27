@@ -10,24 +10,24 @@ namespace MetaWeather.Core.Interfaces
 {
     public interface IWeatherResponse
     {
-        [JsonProperty("consolidated_weather")]
+        [JsonProperty("consolidated_weather", Order = 999)]
         List<Forecast> Forecasts { get; set; }
 
         HttpStatusCode StatusCode { get; set; }
 
-        [JsonProperty("time")]
+        [JsonProperty("time", Order = 5)]
         DateTimeOffset Time { get; set; }
 
-        [JsonProperty("timezone")]
+        [JsonProperty("timezone", Order = 4)]
         string TimeZone { get; set; }
 
-        [JsonProperty("timezone_name")]
+        [JsonProperty("timezone_name", Order = 3)]
         string TimeZoneName { get; set; }
 
-        [JsonProperty("title")]
+        [JsonProperty("title", Order = 2)]
         string Title { get; set; }
 
-        [JsonProperty("woeid")]
+        [JsonProperty("woeid", Order = 1)]
         long WoeId { get; set; }
     }
 }

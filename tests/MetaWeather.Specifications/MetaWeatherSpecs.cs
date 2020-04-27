@@ -8,7 +8,6 @@ using MetaWeather.Application;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
 using Newtonsoft.Json;
-using NSubstitute;
 using Refit;
 using RichardSzalay.MockHttp;
 using Xbehave;
@@ -116,10 +115,10 @@ namespace MetaWeather.Specifications
         [Scenario]
         [Example("NotBelfast")]
         [Example("NotBirmingham")]
-        public void Api_Submit_InvalidLocationRequest_ReturnsError(string cityName,
-            ApiProxy                                                      apiProxy,
-            ILocationRequest                                              locationRequest,
-            ILocationResponse                                             locationResponse)
+        public void Api_Submit_InvalidLocationRequest_ReturnsNotFound(string cityName,
+            ApiProxy                                                         apiProxy,
+            ILocationRequest                                                 locationRequest,
+            ILocationResponse                                                locationResponse)
         {
             $"Given a cityName value of {cityName}"
                 .x(() =>
@@ -131,7 +130,7 @@ namespace MetaWeather.Specifications
                 });
 
             "And an ApiProxy"
-                .x(() => apiProxy = new ApiProxy(Substitute.For<IMetaweatherService>()));
+                .x(() => { apiProxy = new ApiProxy(_metaweatherService); });
 
 
             "When the location request is submitted"
@@ -144,7 +143,7 @@ namespace MetaWeather.Specifications
                     using (new AssertionScope())
                     {
                         locationResponse.StatusCode.Should().Be(HttpStatusCode.NotFound);
-                        locationResponse.Locations.Should().BeEmpty();
+                        locationResponse.Locations.Should().BeNullOrEmpty();
                     }
                 });
         }

@@ -21,7 +21,7 @@ steps:
       displayName: "Specification Tests"
       inputs:
         command: test
-        projects: '**/*Specs/*.csproj'
+        projects: '**/tests/MetaWeather.Specifications/*.csproj'
         arguments: '--configuration $(buildConfiguration)'
 
     - task: DotNetCoreCLI@2

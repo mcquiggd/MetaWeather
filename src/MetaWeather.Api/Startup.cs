@@ -1,4 +1,6 @@
 using System;
+
+using MetaWeather.Api.Models;
 using MetaWeather.Application;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,6 +43,22 @@ namespace MetaWeather.Api
                 });
 
             services.AddControllers();
+
+            // An alternative to IOptions, that enables access within the ConfigureService method
+            var apiOptions = new ApiOptions();
+            Configuration.GetSection("ApiOptions").Bind(apiOptions);
+
+            services.AddSingleton(apiOptions);
+
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer",
+                              options =>
+                {
+                    options.Authority = apiOptions.Authority;
+                    options.RequireHttpsMetadata = true;
+
+                    options.Audience = apiOptions.Audience;
+                });
         }
 
         public IConfiguration Configuration { get; }

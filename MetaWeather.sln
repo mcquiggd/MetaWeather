@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaWeather.Core", "src\Met
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaWeather.Application", "src\MetaWeather.Application\MetaWeather.Application.csproj", "{90AE1FE1-A986-48AD-B3D0-94978C6C2E33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaWeather.Api.UnitTests", "tests\MetaWeather.Api.UnitTests\MetaWeather.Api.UnitTests.csproj", "{30820611-778D-449F-9175-83D83DCCF547}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{90AE1FE1-A986-48AD-B3D0-94978C6C2E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90AE1FE1-A986-48AD-B3D0-94978C6C2E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90AE1FE1-A986-48AD-B3D0-94978C6C2E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30820611-778D-449F-9175-83D83DCCF547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30820611-778D-449F-9175-83D83DCCF547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30820611-778D-449F-9175-83D83DCCF547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30820611-778D-449F-9175-83D83DCCF547}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{A4FED1E4-D083-4124-BC0E-834732314526} = {66DA8BEF-999C-4467-9F0E-130900EC0CA1}
 		{FADCA370-3677-4651-8D7D-190B7F7936C6} = {D274CFDE-5C1D-489F-A48C-48D1AD1AE3CF}
 		{90AE1FE1-A986-48AD-B3D0-94978C6C2E33} = {D274CFDE-5C1D-489F-A48C-48D1AD1AE3CF}
+		{30820611-778D-449F-9175-83D83DCCF547} = {66DA8BEF-999C-4467-9F0E-130900EC0CA1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2398FE11-CB76-4049-8921-9B10F9EABF0E}

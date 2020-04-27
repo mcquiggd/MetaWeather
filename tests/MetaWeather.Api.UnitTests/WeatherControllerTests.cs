@@ -1,10 +1,15 @@
 using System.Threading.Tasks;
 
+using FluentAssertions;
+using FluentAssertions.AspNetCore.Mvc;
+using FluentAssertions.Execution;
+
 using MetaWeather.Api.Controllers;
+using MetaWeather.Api.Models;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
-
-using Microsoft.AspNetCore.Mvc;
+using MetaWeather.Tests.Common;
+using Microsoft.Extensions.Logging;
 
 using NSubstitute;
 
@@ -16,29 +21,42 @@ namespace MetaWeather.Api.UnitTests
 
     {
         IApiProxy _apiProxy;
-        readonly WeatherController _weatherController;
+        WeatherController _weatherController;
         TestWeatherResponseBuilder _weatherResponseBuiler;
 
-        public WeatherControllerTests()
+        public WeatherControllerTests() { }
+
+        [Theory]
+        [AutoNSubstituteData]
+        public async Task WeatherController_GetWithValidWoeId_ReturnsValidWeatherResponse(ILogger<WeatherController> logger,
+                                                                                          ApiOptions apiOptions,
+                                                                                          IApiProxy apiProxy)
         {
+            var expectedCount = 5;
+            _apiProxy = apiProxy;
+
+            //Arrange
             _apiProxy = Substitute.For<IApiProxy>();
             _weatherResponseBuiler = new TestWeatherResponseBuilder();
 
-            _weatherController = new WeatherController(_apiProxy);
-        }
-
-        [Fact]
-        public async Task WeatherController_GetWithValidWoeId_ReturnsValidWeatherResponse()
-        {
-            //Arrange
+            _weatherController = new WeatherController(logger, apiOptions, _apiProxy);
             _apiProxy.SubmitWeatherRequest(Arg.Any<IWeatherRequest>())
                 .Returns(_weatherResponseBuiler.Default().WithBelfast().Build());
 
             //Act
-            var result = await _weatherController.Post(new WeatherRequest());
+            var weatherResponse = await _weatherController.Post(new WeatherRequest());
 
-            //Assert
-            Assert.IsAssignableFrom<ActionResult<IWeatherResponse>>(result);
+            using(new AssertionScope())
+            {
+                //weatherResponse.As<WeatherResponse>().StatusCode.Should().Be(HttpStatusCode.OK);
+                weatherResponse.Should().BeOkObjectResult().ValueAs<IWeatherResponse>().Forecasts
+                    .Should()
+                    .HaveCount(expectedCount);
+
+
+                //weatherResponse.Result.StatusCode.Should().Be(HttpStatusCode.OK);
+                //weatherResponse.Result.Value.Forecasts.Should().HaveCount(expectedCount);
+            }
         }
     }
 }

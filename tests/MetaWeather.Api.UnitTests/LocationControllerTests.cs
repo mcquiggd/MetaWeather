@@ -1,11 +1,15 @@
 using System.Threading.Tasks;
 
+using FluentAssertions;
+using FluentAssertions.AspNetCore.Mvc;
+using FluentAssertions.Execution;
+
 using MetaWeather.Api.Controllers;
+using MetaWeather.Api.Models;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
 using MetaWeather.Tests.Common;
-
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 using NSubstitute;
 
@@ -17,30 +21,44 @@ namespace MetaWeather.Api.UnitTests
 
     {
         IApiProxy _apiProxy;
-        readonly LocationController _locationController;
+        LocationController _locationController;
         TestLocationResponseBuilder _locationResponseBuilder;
-        TestWeatherResponseBuilder _weatherBuilder;
 
-        public LocationControllerTests()
+        public LocationControllerTests() { }
+
+        [Theory]
+        [AutoNSubstituteData]
+        public async Task LocationController_GetWithValidWoeId_ReturnsValidLocationAsync(ILogger<LocationController> logger,
+                                                                                         ApiOptions apiOptions,
+                                                                                         IApiProxy apiProxy)
         {
+            var expectedCount = 1;
+            _apiProxy = apiProxy;
+
+            // Arrange
             _apiProxy = Substitute.For<IApiProxy>();
             _locationResponseBuilder = new TestLocationResponseBuilder();
 
-            _locationController = new LocationController(_apiProxy);
-        }
-
-        [Fact]
-        public async Task LocationController_GetWithValidWoeId_ReturnsValidLocationAsync()
-        {
-            //Arrange
+            _locationController = new LocationController(logger, apiOptions, _apiProxy);
             _apiProxy.SubmitLocationRequest(Arg.Any<ILocationRequest>())
                 .Returns(_locationResponseBuilder.Default().WithBelfast().Build());
 
-            //Act
-            var result = await _locationController.Get(new LocationRequest());
+            // Act
+            var locationResponse = await _locationController.Post(new LocationRequest());
 
-            //Assert
-            Assert.IsAssignableFrom<ActionResult<ILocationResponse>>(result);
+
+            // Assert
+            using(new AssertionScope())
+            {
+                //weatherResponse.As<WeatherResponse>().StatusCode.Should().Be(HttpStatusCode.OK);
+                locationResponse.Should().BeOkObjectResult().ValueAs<ILocationResponse>().Locations
+                    .Should()
+                    .HaveCount(expectedCount);
+
+
+                //weatherResponse.Result.StatusCode.Should().Be(HttpStatusCode.OK);
+                //weatherResponse.Result.Value.Forecasts.Should().HaveCount(expectedCount);
+            }
         }
     }
 }

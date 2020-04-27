@@ -10,9 +10,11 @@ namespace MetaWeather.Api.Controllers
     public class ErrorController : ControllerBase
     {
         [Route("/error")]
+        [HttpGet]
         public IActionResult Error() => Problem();
 
         [Route("/error-local-development")]
+        [HttpGet]
         public IActionResult ErrorLocalDevelopment([FromServices] IWebHostEnvironment webHostEnvironment)
         {
             if(webHostEnvironment.EnvironmentName != "Development")

@@ -44,7 +44,7 @@ namespace MetaWeather.Specifications
             "When the location request is submitted".x(async() =>
                 locationResponse = await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
 
-            "Then the location response should return StatusCode 404, and Locations should be empty".x(() =>
+            "Then the location response should return HttpStatusCode.NotFound, and Locations should be empty".x(() =>
             {
                 using(new AssertionScope())
                 {
@@ -78,13 +78,13 @@ namespace MetaWeather.Specifications
             "When the location request is submitted".x(async() =>
                 locationResponse = await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
 
-            $"Then the location response should have a StatusCode of Ok, CityName {cityName} and Woeid {expectedWoeid}".x(() =>
+            $"Then the location response should return HttpStatusCode.OK), CityName {cityName} and WoeId {expectedWoeid}".x(() =>
             {
                 using(new AssertionScope())
                 {
                     locationResponse.StatusCode.Should().Be(HttpStatusCode.OK);
                     locationResponse.Locations.Should().HaveCount(expectedCount);
-                    locationResponse.Locations.First().Woeid.Should().Be(expectedWoeid);
+                    locationResponse.Locations.First().WoeId.Should().Be(expectedWoeid);
                 }
             });
         }

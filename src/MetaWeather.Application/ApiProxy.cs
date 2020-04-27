@@ -42,5 +42,34 @@ namespace MetaWeather.Application
                     { StatusCode = HttpStatusCode.InternalServerError, Locations = null });
             }
         }
+
+        public async Task<WeatherResponse> SubmitWeatherRequest(IWeatherRequest weatherRequest)
+        {
+            try
+            {
+                using(var apiResponse = await _metaWeatherService.GetWeatherByWoeId(weatherRequest.WoeId))
+                {
+                    if(!apiResponse.IsSuccessStatusCode)
+                    {
+                        return await Task.FromResult(new WeatherResponse
+                            { StatusCode = apiResponse.StatusCode, Forecasts = null });
+                    }
+
+                    if(!apiResponse.Content.Any())
+                    {
+                        return await Task.FromResult(new WeatherResponse
+                            { StatusCode = HttpStatusCode.NotFound, Forecasts = null });
+                    }
+
+                    return await Task.FromResult(new WeatherResponse
+                        { StatusCode = HttpStatusCode.OK, Forecasts = apiResponse.Content });
+                }
+            } catch(Exception ex) when ((ex is ApiException) || (ex is WebException))
+            {
+                //TODO:Log exception
+                return await Task.FromResult(new WeatherResponse
+                    { StatusCode = HttpStatusCode.InternalServerError, Forecasts = null });
+            }
+        }
     }
 }

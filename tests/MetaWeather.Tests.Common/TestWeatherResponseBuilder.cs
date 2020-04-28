@@ -55,7 +55,7 @@ public class TestWeatherResponseBuilder
 
 
         /// Set the Forecasts using a data generator method
-        /// TODO: Configure AutoFixcture to do this from a known dataset
+        /// TODO: Configure AutoFixture to do this from a known dataset
         /// <see cref="AutoNSubstituteDataAttribute"/>
         CreateFiveForecasts();
 

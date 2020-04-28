@@ -11,7 +11,6 @@ namespace MetaWeather.Application
         Task<ApiResponse<List<Location>>> GetLocationByCityName(string cityName);
 
         [Get("/api/location/{woeid}")]
-        //Task<ApiResponse<List<Forecast>>> GetWeatherByWoeId(int woeId);
         Task<ApiResponse<WeatherResponse>> GetWeatherByWoeId(int woeId);
     }
 }

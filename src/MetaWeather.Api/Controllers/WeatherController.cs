@@ -5,6 +5,7 @@ using MetaWeather.Api.Models;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,6 +14,7 @@ namespace MetaWeather.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WeatherController : ControllerBase
     {
         readonly ApiOptions _apiOptions;
@@ -34,7 +36,10 @@ namespace MetaWeather.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(WeatherRequest weatherRequest)
         {
+            // Model state validation currently 'implicit' - would implement FluentValidation, to align
+            // business rules
             // TODO: Add logic to validate and return correct StatusCode
+
             var results = await _apiProxy.SubmitWeatherRequest(weatherRequest);
 
             return Ok(results);

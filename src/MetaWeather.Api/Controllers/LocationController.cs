@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using MetaWeather.Api.Models;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -36,6 +35,8 @@ namespace MetaWeather.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(LocationRequest locationRequest)
         {
+            // Model state validation currently 'implicit' - would implement FluentValidation, to align
+            // business rules
             // TODO: Add logic to validate and return correct StatusCode
 
             var result = await _apiProxy.SubmitLocationRequest(locationRequest);

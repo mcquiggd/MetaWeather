@@ -36,7 +36,10 @@ namespace MetaWeather.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(WeatherRequest weatherRequest)
         {
+            // Model state validation currently 'implicit' - would implement FluentValidation, to align
+            // business rules
             // TODO: Add logic to validate and return correct StatusCode
+
             var results = await _apiProxy.SubmitWeatherRequest(weatherRequest);
 
             return Ok(results);

@@ -6,31 +6,31 @@ export class LocationData extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { forecasts: [], loading: true };
+    this.state = { locations: [], loading: true };
   }
 
   componentDidMount() {
     this.populateLocationData();
   }
 
-  static renderForecastsTable(forecasts) {
+  static renderForecastsTable(locations) {
     return (
       <table className='table table-striped' aria-labelledby="tabelLabel">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
+            <th>WoeId</th>
+            <th>Title</th>
+            <th>Location Type</th>
+            <th>Lattitude and Longitude</th>
           </tr>
         </thead>
         <tbody>
-          {forecasts.map(forecast =>
-            <tr key={forecast.date}>
-              <td>{forecast.date}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
+          {locations.map(location =>
+            <tr key={location.woeId}>
+              <td>{location.woeId}</td>
+              <td>{location.title}</td>
+              <td>{location.locationType}</td>
+              <td>{location.latLong}</td>
             </tr>
           )}
         </tbody>
@@ -41,11 +41,11 @@ export class LocationData extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : LocationData.renderForecastsTable(this.state.forecasts);
+      : LocationData.renderForecastsTable(this.state.locations);
 
     return (
       <div>
-        <h1 id="tabelLabel" >Location forecast</h1>
+        <h1 id="tabelLabel" >Locations</h1>
         <p>This component demonstrates fetching location data from the server.</p>
         {contents}
       </div>
@@ -54,10 +54,14 @@ export class LocationData extends Component {
 
   async populateLocationData() {
     const token = await authService.getAccessToken();
-    const response = await fetch('weatherforecast', {
-      headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
-    });
+
+      const response = await fetch('api/location', {
+              method: 'post',
+              body: JSON.stringify({ cityName : 'Birmingham'}),              
+          headers: !token ? { 'Content-Type': 'application/json'} : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }
+      });
+
     const data = await response.json();
-    this.setState({ forecasts: data, loading: false });
+    this.setState({ locations: data.locations, loading: false });
   }
 }

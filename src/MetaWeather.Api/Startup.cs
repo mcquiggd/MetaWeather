@@ -81,7 +81,7 @@ namespace MetaWeather.Api
                     {
                         Version = "v1",
                         Title = "MetaWeather Api",
-                        Description = "Sample Api for Assesment task",
+                        Description = "Sample Api for Assessment task",
                         //TermsOfService = new Uri("https://example.com/terms"),
                         Contact =
                     new OpenApiContact

@@ -55,11 +55,19 @@ namespace MetaWeather.Application
                             { StatusCode = apiResponse.StatusCode, Forecasts = null });
                     }
 
-                    if(!apiResponse.Content.Forecasts.Any())
+                    var forecasts = apiResponse.Content.Forecasts;
+
+                    if(!forecasts.Any())
                     {
                         return await Task.FromResult(new WeatherResponse
                             { StatusCode = HttpStatusCode.NotFound, Forecasts = null });
                     }
+
+                    //foreach(var forecast in forecasts)
+                    //{
+                    //    forecast.WeatherStateImageURL = $"https://www.metaweather.com/static/img/weather/{forecast.WeatherStateAbbr}.svg";
+                    //    //forecast.DayOfWeek = forecast.ApplicableDate.DayOfWeek;
+                    //}
 
                     return await Task.FromResult(new WeatherResponse
                         { StatusCode = HttpStatusCode.OK, Forecasts = apiResponse.Content.Forecasts });

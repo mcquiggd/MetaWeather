@@ -22,7 +22,6 @@ public class TestWeatherResponseBuilder
                     ApplicableDate = new DateTimeOffset(DateTime.UtcNow).AddDays(i),
                     TheTemp = 10 + i,
                     WeatherStateAbbr = "s",
-                    WeatherStateImageURL = string.Empty,
                     WeatherStateName = "Snow"
                 });
         }

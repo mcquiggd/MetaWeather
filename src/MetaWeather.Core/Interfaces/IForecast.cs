@@ -16,7 +16,7 @@ namespace MetaWeather.Core.Interfaces
         string WeatherStateAbbr { get; set; }
 
         [JsonProperty("weather_state_name_image_url")]
-        string WeatherStateImageURL { get; set; } //  => $"{_apiOptions.ApiUrl}/static/img/weather/{WeatherStateAbbr}.svg";
+        string WeatherStateImageURL { get; }
 
         [JsonProperty("weather_state_name")]
         string WeatherStateName { get; set; }

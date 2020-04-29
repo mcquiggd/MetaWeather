@@ -3,7 +3,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/44211e9b1ef34c658df571f370047276)](https://app.codacy.com/manual/mcquiggd/MetaWeather?utm_source=github.com&utm_medium=referral&utm_content=mcquiggd/MetaWeather&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://dev.azure.com/mcquiggd/MetaWeather/_apis/build/status/mcquiggd.MetaWeather?branchName=master)](https://dev.azure.com/mcquiggd/MetaWeather/_build/latest?definitionId=1&branchName=master)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/mcquiggd/MetaWeather/1)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a638aa0aaa4940af8de94a16990eea4b)](https://www.codacy.com/manual/mcquiggd/MetaWeather?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mcquiggd/MetaWeather&amp;utm_campaign=Badge_Grade)
 
 A solution to a coding assessmenent test, with the initial specification that the resulting application should feature an ASP.Net MVC Application with a React front end, with authentication and authorization.
 

@@ -21,6 +21,9 @@ namespace MetaWeather.Api
 {
     public class Startup
     {
+        const string STR_License = "https://example.com/license";
+        const string STR_Mcquiggd = "https://twitter.com/mcquiggd";
+
         public Startup(IConfiguration configuration) => Configuration = configuration;
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -114,14 +117,8 @@ namespace MetaWeather.Api
                         //TermsOfService = new Uri("https://example.com/terms"),
                         Contact =
                     new OpenApiContact
-                            {
-                                Name = "David McQuiggin",
-                                Email = string.Empty,
-                                Url = new Uri("https://twitter.com/mcquiggd"),
-                            },
-                        License =
-                    new OpenApiLicense
-                            { Name = "Use under LICX", Url = new Uri("https://example.com/license"), }
+                            { Name = "David McQuiggin", Email = string.Empty, Url = new Uri(STR_Mcquiggd), },
+                        License = new OpenApiLicense { Name = "Use under LICX", Url = new Uri(STR_License), }
                     });
                 c.AddSecurityDefinition("Bearer",
                                         new OpenApiSecurityScheme

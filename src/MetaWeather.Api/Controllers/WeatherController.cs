@@ -17,7 +17,7 @@ namespace MetaWeather.Api.Controllers
     public class WeatherController : ControllerBase
     {
         readonly ApiOptions _apiOptions;
-        IApiProxy _apiProxy;
+        readonly IApiProxy _apiProxy;
         readonly ILogger<WeatherController> _logger;
 
         public WeatherController(ILogger<WeatherController> logger, ApiOptions apiOptions, IApiProxy apiProxy)
@@ -39,7 +39,7 @@ namespace MetaWeather.Api.Controllers
             // business rules
             // TODO: Add logic to validate and return correct StatusCode
 
-            var results = await _apiProxy.SubmitWeatherRequest(weatherRequest);
+            var results = await _apiProxy.SubmitWeatherRequest(weatherRequest).ConfigureAwait(false);
 
             return Ok(results);
         }

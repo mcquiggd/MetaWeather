@@ -47,7 +47,7 @@ namespace MetaWeather.Api.UnitTests
                 .Returns(_locationResponseBuilder.Default().WithBelfast().Build());
 
             // Act
-            var locationResponse = await _locationController.Post(new LocationRequest());
+            var locationResponse = await _locationController.Post(new LocationRequest()).ConfigureAwait(false);
 
 
             // Assert

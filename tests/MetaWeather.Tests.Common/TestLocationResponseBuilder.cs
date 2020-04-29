@@ -25,7 +25,8 @@ namespace MetaWeather.Tests.Common
                                                    {
                                                        Content =
                                                    new StringContent(JsonConvert.SerializeObject(_locationResponse.Locations))
-                                                   });
+                                                   })
+                                                         .ConfigureAwait(false);
 
         public TestLocationResponseBuilder Default()
         {

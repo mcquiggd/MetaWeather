@@ -47,7 +47,7 @@ namespace MetaWeather.Api.UnitTests
                 .Returns(_weatherResponseBuiler.Default().WithBelfast().Build());
 
             // Act
-            var weatherResponse = await _weatherController.Post(new WeatherRequest());
+            var weatherResponse = await _weatherController.Post(new WeatherRequest()).ConfigureAwait(false);
 
             // Assert
             using(new AssertionScope())

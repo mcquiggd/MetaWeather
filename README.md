@@ -10,6 +10,7 @@ A solution to a coding assessmenent test, with the initial specification that th
 D1: As the external API that returns the desired data is:
 
 a. Unsecured.
+ 
 b. Returns a variety of fields which are not required to be displayed in the desired UI.
 
 Implement a secured API proxy to the external API, offering control of authentication methods, authorization profiles, transformation of data to the desired model, etc. 

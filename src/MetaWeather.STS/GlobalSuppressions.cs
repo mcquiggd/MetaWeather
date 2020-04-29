@@ -5,6 +5,5 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+[assembly: SuppressMessage("Spellchecker", "CRRSP08:A misspelled word has been found", Justification = "<Pending>", Scope = "member", Target = "~M:MetaWeather.STS.Controllers.OidcConfigurationController.#ctor(Microsoft.AspNetCore.ApiAuthorization.IdentityServer.IClientRequestParametersProvider,Microsoft.Extensions.Logging.ILogger{MetaWeather.STS.Controllers.OidcConfigurationController})")]
 [assembly: SuppressMessage("Spellchecker", "CRRSP08:A misspelled word has been found", Justification = "<Pending>", Scope = "type", Target = "~T:MetaWeather.STS.Controllers.OidcConfigurationController")]
-[assembly: SuppressMessage("Spellchecker", "CRRSP06:A misspelled word has been found", Justification = "<Pending>", Scope = "member", Target = "~M:MetaWeather.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)")]
-[assembly: SuppressMessage("Spellchecker", "CRRSP08:A misspelled word has been found", Justification = "<Pending>", Scope = "type", Target = "~T:MetaWeather.Api.Controllers.OidcConfigurationController")]

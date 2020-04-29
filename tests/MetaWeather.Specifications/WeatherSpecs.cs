@@ -19,6 +19,10 @@ namespace MetaWeather.Specifications
     /// </summary>
     public class WeatherSpecs
     {
+        const string STR_12723 = "https://www.metaweather.com/api/location/12723";
+        const string STR_44544 = "https://www.metaweather.com/api/location/44544";
+        const string STR_Search = "https://www.metaweather.com/api/location/search";
+
         IMetaWeatherService    _metaWeatherService;
         MockHttpMessageHandler _mockHttpMessageHandler;
 
@@ -94,18 +98,18 @@ namespace MetaWeather.Specifications
 
             // TODO: Extract strings to constants
 
-            _mockHttpMessageHandler.When("https://www.metaweather.com/api/location/search")
+            _mockHttpMessageHandler.When(STR_Search)
                 .WithQueryString("query", "Belfast")
                 .Respond(() => locationBuilder.Default().WithBelfast().BuildHttpResponse());
 
-            _mockHttpMessageHandler.When("https://www.metaweather.com/api/location/search")
+            _mockHttpMessageHandler.When(STR_Search)
                 .WithQueryString("query", "Birmingham")
                 .Respond(() => locationBuilder.Default().WithBirmingham().BuildHttpResponse());
 
-            _mockHttpMessageHandler.When("https://www.metaweather.com/api/location/44544")
+            _mockHttpMessageHandler.When(STR_44544)
                 .Respond(() => weatherBuilder.Default().WithBelfast().BuildHttpResponse());
 
-            _mockHttpMessageHandler.When("https://www.metaweather.com/api/location/12723")
+            _mockHttpMessageHandler.When(STR_12723)
                 .Respond(() => weatherBuilder.Default().WithBirmingham().BuildHttpResponse());
 
             _mockHttpMessageHandler.Fallback

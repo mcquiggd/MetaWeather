@@ -17,7 +17,7 @@ namespace MetaWeather.Api.Controllers
     public class LocationController : ControllerBase
     {
         readonly ApiOptions _apiOptions;
-        IApiProxy _apiProxy;
+        readonly IApiProxy _apiProxy;
         readonly ILogger<LocationController> _logger;
 
         public LocationController(ILogger<LocationController> logger, ApiOptions apiOptions, IApiProxy apiProxy)
@@ -39,7 +39,7 @@ namespace MetaWeather.Api.Controllers
             // business rules
             // TODO: Add logic to validate and return correct StatusCode
 
-            var result = await _apiProxy.SubmitLocationRequest(locationRequest);
+            var result = await _apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false);
 
             return Ok(result);
         }

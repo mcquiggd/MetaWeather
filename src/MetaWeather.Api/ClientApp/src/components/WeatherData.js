@@ -31,7 +31,7 @@ export class WeatherData extends Component {
     }
 
     handleRefresh(resolve, reject) {
-        let self = this;
+        let self = this;        
         setTimeout(function () {
         self.populateWeatherData() ? resolve() : reject();
         }, 500);

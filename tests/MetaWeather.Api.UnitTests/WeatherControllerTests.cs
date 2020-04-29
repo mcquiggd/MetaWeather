@@ -17,6 +17,9 @@ using Xunit;
 
 namespace MetaWeather.Api.UnitTests
 {
+    /// <summary>
+    /// These are examples, rather than an attempt at full test coverage.
+    /// </summary>
     public class WeatherControllerTests
 
     {
@@ -35,7 +38,7 @@ namespace MetaWeather.Api.UnitTests
             var expectedCount = 5;
             _apiProxy = apiProxy;
 
-            //Arrange
+            // Arrange
             _apiProxy = Substitute.For<IApiProxy>();
             _weatherResponseBuiler = new TestWeatherResponseBuilder();
 
@@ -43,19 +46,15 @@ namespace MetaWeather.Api.UnitTests
             _apiProxy.SubmitWeatherRequest(Arg.Any<IWeatherRequest>())
                 .Returns(_weatherResponseBuiler.Default().WithBelfast().Build());
 
-            //Act
+            // Act
             var weatherResponse = await _weatherController.Post(new WeatherRequest());
 
+            // Assert
             using(new AssertionScope())
             {
-                //weatherResponse.As<WeatherResponse>().StatusCode.Should().Be(HttpStatusCode.OK);
                 weatherResponse.Should().BeOkObjectResult().ValueAs<IWeatherResponse>().Forecasts
                     .Should()
                     .HaveCount(expectedCount);
-
-
-                //weatherResponse.Result.StatusCode.Should().Be(HttpStatusCode.OK);
-                //weatherResponse.Result.Value.Forecasts.Should().HaveCount(expectedCount);
             }
         }
     }

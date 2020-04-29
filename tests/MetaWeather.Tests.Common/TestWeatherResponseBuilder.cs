@@ -8,6 +8,12 @@ using MetaWeather.Core.Entities;
 
 using Newtonsoft.Json;
 
+/// <summary>
+/// Follow a builder pattern to provide easily readable, known sets of test data.   e.g. var weatherBuilder = new
+/// TestWeatherResponseBuilder();  weatherBuilder.Default().WithBelfast().BuildHttpResponse(); 
+/// weatherBuilder.WithBelfast().WithBirmingham().BuildHttpResponse(); 
+/// weatherBuilder.WithStatusCode(HttpStatusCode.NotFound).BuildHttpResponse();
+/// </summary>
 public class TestWeatherResponseBuilder
 {
     WeatherResponse _weatherResponse;

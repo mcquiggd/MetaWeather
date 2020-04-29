@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MetaWeather.Api.Models;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,7 +13,7 @@ namespace MetaWeather.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class WeatherController : ControllerBase
     {
         readonly ApiOptions _apiOptions;

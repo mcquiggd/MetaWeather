@@ -13,11 +13,11 @@ using Xbehave;
 
 namespace MetaWeather.Specifications
 {
+    /// <summary>
+    /// An initial set of Specifications, to enable investigation of interfaces / methods / properties that will need to
+    /// be implemented to meet requirements. These are are examples
+    /// </summary>
     public class WeatherSpecs
-    /*
-    The application will communicate to the following REST API: https://www.metaweather.com/api/
-    and retrieve the next 5 days of weather for Belfast.
-    */
     {
         IMetaWeatherService    _metaWeatherService;
         MockHttpMessageHandler _mockHttpMessageHandler;

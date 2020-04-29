@@ -39,7 +39,6 @@ namespace MetaWeather.Api
             } else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -84,8 +83,6 @@ namespace MetaWeather.Api
                 });
 
             services.AddScoped<IApiProxy, ApiProxy>();
-
-            //services.AddControllers();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));

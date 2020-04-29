@@ -17,6 +17,9 @@ using Xunit;
 
 namespace MetaWeather.Api.UnitTests
 {
+    /// <summary>
+    /// These are examples, rather than an attempt at full test coverage.
+    /// </summary>
     public class LocationControllerTests
 
     {
@@ -50,14 +53,9 @@ namespace MetaWeather.Api.UnitTests
             // Assert
             using(new AssertionScope())
             {
-                //weatherResponse.As<WeatherResponse>().StatusCode.Should().Be(HttpStatusCode.OK);
                 locationResponse.Should().BeOkObjectResult().ValueAs<ILocationResponse>().Locations
                     .Should()
                     .HaveCount(expectedCount);
-
-
-                //weatherResponse.Result.StatusCode.Should().Be(HttpStatusCode.OK);
-                //weatherResponse.Result.Value.Forecasts.Should().HaveCount(expectedCount);
             }
         }
     }

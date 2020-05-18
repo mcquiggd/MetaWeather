@@ -12,15 +12,15 @@ namespace MetaWeather.Tests.Common
 {
     /// <summary>
     /// Follow a builder pattern to provide easily readable, known sets of test data.   e.g. var weatherBuilder = new
-    /// TestWeatherResponseBuilder();  weatherBuilder.Default().WithBelfast().BuildHttpResponse(); 
-    /// weatherBuilder.WithBelfast().WithBirmingham().BuildHttpResponse(); 
+    /// TestWeatherResponseBuilder();  weatherBuilder.Default().WithBelfast().BuildHttpResponse();
+    /// weatherBuilder.WithBelfast().WithBirmingham().BuildHttpResponse();
     /// weatherBuilder.WithStatusCode(HttpStatusCode.NotFound).BuildHttpResponse();
     /// </summary>
     public class TestWeatherResponseBuilder
     {
-        WeatherResponse _weatherResponse;
+        private WeatherResponse _weatherResponse;
 
-        void CreateFiveForecasts()
+        private void CreateFiveForecasts()
         {
             for(var i = 0; i < 5; i++)
             {
@@ -60,7 +60,6 @@ namespace MetaWeather.Tests.Common
             _weatherResponse.Time = new DateTimeOffset(DateTime.UtcNow);
             _weatherResponse.TimeZone = "LMT";
             _weatherResponse.TimeZoneName = "Europe/London";
-
 
             /// Set the Forecasts using a data generator method
             /// Configure AutoFixture to do this from a known dataset

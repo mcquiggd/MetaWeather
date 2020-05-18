@@ -16,9 +16,9 @@ namespace MetaWeather.Api.Controllers
     [Authorize]
     public class WeatherController : ControllerBase
     {
-        readonly ApiOptions _apiOptions;
-        readonly IApiProxy _apiProxy;
-        readonly ILogger<WeatherController> _logger;
+        private readonly ApiOptions _apiOptions;
+        private readonly IApiProxy _apiProxy;
+        private readonly ILogger<WeatherController> _logger;
 
         public WeatherController(ILogger<WeatherController> logger, ApiOptions apiOptions, IApiProxy apiProxy)
         {
@@ -38,7 +38,6 @@ namespace MetaWeather.Api.Controllers
             // Model state validation currently 'implicit' - would implement FluentValidation, to align
             // business rules
             // TODO: Add logic to validate and return correct StatusCode
-
             var results = await _apiProxy.SubmitWeatherRequest(weatherRequest).ConfigureAwait(false);
 
             return Ok(results);

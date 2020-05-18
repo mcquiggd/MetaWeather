@@ -6,7 +6,7 @@ namespace MetaWeather.Api.Controllers
 {
     public class OidcConfigurationController : Controller
     {
-        readonly ILogger<OidcConfigurationController> _logger;
+        private readonly ILogger<OidcConfigurationController> _logger;
 
         public OidcConfigurationController(IClientRequestParametersProvider clientRequestParametersProvider,
                                            ILogger<OidcConfigurationController> logger)

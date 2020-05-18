@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 using MetaWeather.Api.Models;
@@ -16,9 +17,9 @@ namespace MetaWeather.Api.Controllers
     [Authorize]
     public class LocationController : ControllerBase
     {
-        readonly ApiOptions _apiOptions;
-        readonly IApiProxy _apiProxy;
-        readonly ILogger<LocationController> _logger;
+        private readonly ApiOptions _apiOptions;
+        private readonly IApiProxy _apiProxy;
+        private readonly ILogger<LocationController> _logger;
 
         public LocationController(ILogger<LocationController> logger, ApiOptions apiOptions, IApiProxy apiProxy)
         {

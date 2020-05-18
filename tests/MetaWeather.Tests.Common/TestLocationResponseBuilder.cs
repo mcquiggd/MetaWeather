@@ -10,13 +10,13 @@ namespace MetaWeather.Tests.Common
 {
     /// <summary>
     /// Follow a builder pattern to provide easily readable, known sets of test data.   e.g. var weatherBuilder = new
-    /// TestWeatherResponseBuilder();  weatherBuilder.Default().WithBelfast().BuildHttpResponse(); 
-    /// weatherBuilder.WithBelfast().WithBirmingham().BuildHttpResponse(); 
+    /// TestWeatherResponseBuilder();  weatherBuilder.Default().WithBelfast().BuildHttpResponse();
+    /// weatherBuilder.WithBelfast().WithBirmingham().BuildHttpResponse();
     /// weatherBuilder.WithStatusCode(HttpStatusCode.NotFound).BuildHttpResponse();
     /// </summary>
     public class TestLocationResponseBuilder
     {
-        LocationResponse _locationResponse;
+        private LocationResponse _locationResponse;
 
         public LocationResponse Build() => _locationResponse;
 

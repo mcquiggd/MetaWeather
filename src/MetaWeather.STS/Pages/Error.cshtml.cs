@@ -8,7 +8,7 @@ namespace MetaWeather.STS.Pages
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel
     {
-        readonly ILogger<ErrorModel> _logger;
+        private readonly ILogger<ErrorModel> _logger;
 
         public ErrorModel(ILogger<ErrorModel> logger) => _logger = logger;
 

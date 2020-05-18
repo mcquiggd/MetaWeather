@@ -21,8 +21,8 @@ namespace MetaWeather.Api
 {
     public class Startup
     {
-        const string STR_License = "https://example.com/license";
-        const string STR_Mcquiggd = "https://twitter.com/mcquiggd";
+        private const string STR_License = "https://example.com/license";
+        private const string STR_Mcquiggd = "https://twitter.com/mcquiggd";
 
         public Startup(IConfiguration configuration) => Configuration = configuration;
 
@@ -30,10 +30,7 @@ namespace MetaWeather.Api
         {
             app.UseSwagger();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MetaWeather Api V1");
-            });
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MetaWeather Api V1"));
 
             if(env.IsDevelopment())
             {
@@ -80,10 +77,7 @@ namespace MetaWeather.Api
             services.AddSingleton(apiOptions);
 
             services.AddRefitClient<IMetaWeatherService>()
-                .ConfigureHttpClient(c =>
-                {
-                    c.BaseAddress = new Uri(apiOptions.ApiUrl);
-                });
+                .ConfigureHttpClient(c => c.BaseAddress = new Uri(apiOptions.ApiUrl));
 
             services.AddScoped<IApiProxy, ApiProxy>();
 
@@ -101,10 +95,7 @@ namespace MetaWeather.Api
             services.AddRazorPages();
 
             // In production, the React files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/build";
-            });
+            services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/build");
 
             services.AddSwaggerGen(c =>
             {

@@ -15,13 +15,13 @@ namespace MetaWeather.Specifications
 {
     /// <summary>
     /// An initial set of Specifications, to enable investigation of interfaces / methods / properties that will need to
-    /// be implemented to meet requirements. These are are examples
+    /// be implemented to meet requirements. These are examples
     /// </summary>
     public class WeatherSpecs
     {
-        const string STR_12723 = "https://www.metaweather.com/api/location/12723";
-        const string STR_44544 = "https://www.metaweather.com/api/location/44544";
-        const string STR_Search = "https://www.metaweather.com/api/location/search";
+        internal const string STR_12723 = "https://www.metaweather.com/api/location/12723";
+        internal const string STR_44544 = "https://www.metaweather.com/api/location/44544";
+        internal const string STR_Search = "https://www.metaweather.com/api/location/search";
 
         IMetaWeatherService    _metaWeatherService;
         MockHttpMessageHandler _mockHttpMessageHandler;
@@ -34,20 +34,18 @@ namespace MetaWeather.Specifications
                                                                      IWeatherRequest weatherRequest,
                                                                      IWeatherResponse weatherResponse)
         {
-            $"Given a woeId value of {woeId}".x(() =>
-            {
-                weatherRequest = new WeatherRequest { WoeId = woeId };
-            });
+            $"Given a woeId value of {woeId}"
+                .x(() => weatherRequest = new WeatherRequest { WoeId = woeId });
 
-            "And an ApiProxy".x(() =>
-            {
-                apiProxy = new ApiProxy(_metaWeatherService);
-            });
+            "And an ApiProxy"
+                .x(() => apiProxy = new ApiProxy(_metaWeatherService));
 
-            "When the weather request is submitted".x(async() =>
-                weatherResponse = await apiProxy.SubmitWeatherRequest(weatherRequest).ConfigureAwait(false));
+            "When the weather request is submitted"
+                .x(async() => weatherResponse =
+                await apiProxy.SubmitWeatherRequest(weatherRequest).ConfigureAwait(false));
 
-            "Then the weather response should return StatusCode 404, and Forecasts should be empty".x(() =>
+            "Then the weather response should return StatusCode 404, and Forecasts should be empty"
+                .x(() =>
             {
                 using(new AssertionScope())
                 {
@@ -66,20 +64,18 @@ namespace MetaWeather.Specifications
                                                                     IWeatherRequest weatherRequest,
                                                                     IWeatherResponse weatherResponse)
         {
-            $"Given a woeId value of {woeId}".x(() =>
-            {
-                weatherRequest = new WeatherRequest { WoeId = woeId };
-            });
+            $"Given a woeId value of {woeId}"
+                .x(() => weatherRequest = new WeatherRequest { WoeId = woeId });
 
-            "And an ApiProxy".x(() =>
-            {
-                apiProxy = new ApiProxy(_metaWeatherService);
-            });
+            "And an ApiProxy"
+                .x(() => apiProxy = new ApiProxy(_metaWeatherService));
 
-            "When the weather request is submitted".x(async() =>
-                weatherResponse = await apiProxy.SubmitWeatherRequest(weatherRequest).ConfigureAwait(false));
+            "When the weather request is submitted"
+                .x(async() => weatherResponse =
+                await apiProxy.SubmitWeatherRequest(weatherRequest).ConfigureAwait(false));
 
-            $"Then the weather response should return StatusCode HttpStatusCode.OK), and contain {expectedCount} Forecasts".x(() =>
+            $"Then the weather response should return StatusCode HttpStatusCode.OK), and contain {expectedCount} Forecasts"
+                .x(() =>
             {
                 using(new AssertionScope())
                 {
@@ -113,8 +109,7 @@ namespace MetaWeather.Specifications
                 .Respond(() => weatherBuilder.Default().WithBirmingham().BuildHttpResponse());
 
             _mockHttpMessageHandler.Fallback
-                .Respond(req =>
-                new HttpResponseMessage(HttpStatusCode.NotFound)
+                .Respond(req => new HttpResponseMessage(HttpStatusCode.NotFound)
                 {
                     ReasonPhrase =
                 $"No matching mock handler found for \"{req.Method.ToString().ToUpperInvariant()} {req.RequestUri.AbsoluteUri}\""

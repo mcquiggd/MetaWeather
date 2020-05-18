@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Net;
+﻿using System.Net;
 
 using FluentAssertions;
 using FluentAssertions.Execution;
@@ -15,12 +14,12 @@ namespace MetaWeather.Specifications
 {
     /// <summary>
     /// An initial set of Specifications, to enable investigation of interfaces / methods / properties that will need to
-    /// be implemented to meet requirements. These are are examples
+    /// be implemented to meet requirements. These are examples
     /// </summary>
     public class LocationSpecs
     {
-        IMetaWeatherService    _metaWeatherService;
-        MockHttpMessageHandler _mockHttpMessageHandler;
+        internal IMetaWeatherService    _metaWeatherService;
+        internal MockHttpMessageHandler _mockHttpMessageHandler;
 
         [Scenario]
         [Example("NotBelfast")]
@@ -30,21 +29,17 @@ namespace MetaWeather.Specifications
                                                                       ILocationRequest locationRequest,
                                                                       ILocationResponse locationResponse)
         {
-            $"Given a cityName value of {cityName}".x(() =>
-            {
-                locationRequest = new LocationRequest { CityName = cityName };
-            });
+            $"Given a cityName value of {cityName}"
+                .x(() => locationRequest = new LocationRequest { CityName = cityName });
 
-            "And an ApiProxy".x(() =>
-            {
-                apiProxy = new ApiProxy(_metaWeatherService);
-            });
+            "And an ApiProxy".x(() => apiProxy = new ApiProxy(_metaWeatherService));
 
+            "When the location request is submitted"
+                .x(async() => locationResponse =
+                await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
 
-            "When the location request is submitted".x(async() =>
-                locationResponse = await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
-
-            "Then the location response should return HttpStatusCode.NotFound, and Locations should be empty".x(() =>
+            "Then the location response should return HttpStatusCode.NotFound, and Locations should be empty"
+                .x(() =>
             {
                 using(new AssertionScope())
                 {
@@ -64,27 +59,24 @@ namespace MetaWeather.Specifications
                                                                         ILocationRequest locationRequest,
                                                                         ILocationResponse locationResponse)
         {
-            $"Given a cityName value of {cityName}".x(() =>
-            {
-                locationRequest = new LocationRequest { CityName = cityName };
-            });
+            $"Given a cityName value of {cityName}"
+                .x(() => locationRequest = new LocationRequest { CityName = cityName });
 
-            "And an ApiProxy".x(() =>
-            {
-                apiProxy = new ApiProxy(_metaWeatherService);
-            });
+            "And an ApiProxy"
+                .x(() => apiProxy = new ApiProxy(_metaWeatherService));
 
+            "When the location request is submitted"
+                .x(async() => locationResponse =
+                await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
 
-            "When the location request is submitted".x(async() =>
-                locationResponse = await apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false));
-
-            $"Then the location response should return HttpStatusCode.OK), CityName {cityName} and WoeId {expectedWoeid}".x(() =>
+            $"Then the location response should return HttpStatusCode.OK), CityName {cityName} and WoeId {expectedWoeid}"
+                .x(() =>
             {
                 using(new AssertionScope())
                 {
                     locationResponse.StatusCode.Should().Be(HttpStatusCode.OK);
                     locationResponse.Locations.Should().HaveCount(expectedCount);
-                    locationResponse.Locations.First().WoeId.Should().Be(expectedWoeid);
+                    locationResponse.Locations[0].WoeId.Should().Be(expectedWoeid);
                 }
             });
         }

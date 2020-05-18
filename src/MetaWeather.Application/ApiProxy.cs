@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
@@ -10,41 +10,35 @@ namespace MetaWeather.Application
 {
     public class ApiProxy : IApiProxy
     {
-        readonly IMetaWeatherService _metaWeatherService;
+        private readonly IMetaWeatherService _metaWeatherService;
 
         public ApiProxy(IMetaWeatherService metaWeatherService) => _metaWeatherService = metaWeatherService;
 
-        public async Task<LocationResponse> SubmitLocationRequest(ILocationRequest locationRequest)
+        public async Task<LocationResponse> SubmitLocationRequest(ILocationRequest locationRequest
+                                                                  )
         {
             try
             {
-                using(var apiResponse = await _metaWeatherService.GetLocationByCityName(locationRequest.CityName)
+                using(var apiResponse = await _metaWeatherService.GetLocationByCityName(locationRequest.CityName
+                                                                                        )
                                                   .ConfigureAwait(false))
                 {
                     if(!apiResponse.IsSuccessStatusCode)
                     {
-                        return await Task.FromResult(new LocationResponse
-                            { StatusCode = apiResponse.StatusCode, Locations = null })
-                                         .ConfigureAwait(false);
+                        return new LocationResponse { StatusCode = apiResponse.StatusCode, Locations = null };
                     }
 
-                    if(!apiResponse.Content.Any())
+                    if(apiResponse.Content.Count == 0)
                     {
-                        return await Task.FromResult(new LocationResponse
-                            { StatusCode = HttpStatusCode.NotFound, Locations = null })
-                                         .ConfigureAwait(false);
+                        return new LocationResponse { StatusCode = HttpStatusCode.NotFound, Locations = null };
                     }
 
-                    return await Task.FromResult(new LocationResponse
-                        { StatusCode = HttpStatusCode.OK, Locations = apiResponse.Content })
-                                     .ConfigureAwait(false);
+                    return new LocationResponse { StatusCode = HttpStatusCode.OK, Locations = apiResponse.Content };
                 }
             } catch(Exception ex) when ((ex is ApiException) || (ex is WebException))
             {
                 //TODO:Log exception
-                return await Task.FromResult(new LocationResponse
-                    { StatusCode = HttpStatusCode.InternalServerError, Locations = null })
-                                 .ConfigureAwait(false);
+                return new LocationResponse { StatusCode = HttpStatusCode.InternalServerError, Locations = null };
             }
         }
 
@@ -52,35 +46,29 @@ namespace MetaWeather.Application
         {
             try
             {
-                using(var apiResponse = await _metaWeatherService.GetWeatherByWoeId(weatherRequest.WoeId)
-                                                  .ConfigureAwait(false))
+                using (var apiResponse = await _metaWeatherService.GetWeatherByWoeId(weatherRequest.WoeId
+                                                                        )
+                                  .ConfigureAwait(false))
                 {
                     if(!apiResponse.IsSuccessStatusCode)
                     {
-                        return await Task.FromResult(new WeatherResponse
-                            { StatusCode = apiResponse.StatusCode, Forecasts = null })
-                                         .ConfigureAwait(false);
+                        return new WeatherResponse { StatusCode = apiResponse.StatusCode, Forecasts = null };
                     }
 
                     var forecasts = apiResponse.Content.Forecasts;
 
-                    if(!forecasts.Any())
+                    if(forecasts.Count == 0)
                     {
-                        return await Task.FromResult(new WeatherResponse
-                            { StatusCode = HttpStatusCode.NotFound, Forecasts = null })
-                                         .ConfigureAwait(false);
+                        return new WeatherResponse { StatusCode = HttpStatusCode.NotFound, Forecasts = null };
                     }
 
-                    return await Task.FromResult(new WeatherResponse
-                        { StatusCode = HttpStatusCode.OK, Forecasts = apiResponse.Content.Forecasts })
-                                     .ConfigureAwait(false);
+                    return new WeatherResponse
+                    { StatusCode = HttpStatusCode.OK, Forecasts = apiResponse.Content.Forecasts };
                 }
             } catch(Exception ex) when ((ex is ApiException) || (ex is WebException))
             {
                 //TODO:Log exception
-                return await Task.FromResult(new WeatherResponse
-                    { StatusCode = HttpStatusCode.InternalServerError, Forecasts = null })
-                                 .ConfigureAwait(false);
+                return new WeatherResponse { StatusCode = HttpStatusCode.InternalServerError, Forecasts = null };
             }
         }
     }

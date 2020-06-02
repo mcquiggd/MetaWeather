@@ -6,7 +6,7 @@
 
 A solution to a coding assessmenent test, with the initial specification that the resulting application should feature an ASP.Net MVC Application with a React front end, with authentication and authorization.
 
-#### Design Decisions
+## Design Decisions
 
 D1: As the external API that returns the desired data is:
 

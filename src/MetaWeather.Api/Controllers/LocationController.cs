@@ -39,7 +39,9 @@ namespace MetaWeather.Api.Controllers
             // business rules
             // TODO: Add logic to validate and return correct StatusCode
 
-            _logger.LogTrace("Calling Post with parameter {locationRequest}", locationRequest);
+            _logger.LogTrace("Calling Post with parameter {locationRequest} to {apiUrl}",
+                             locationRequest,
+                             _apiOptions.ApiUrl);
 
             var result = await _apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false);
 

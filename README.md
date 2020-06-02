@@ -1,4 +1,4 @@
-﻿#MetaWeather
+﻿# MetaWeather
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/44211e9b1ef34c658df571f370047276)](https://app.codacy.com/manual/mcquiggd/MetaWeather?utm_source=github.com&utm_medium=referral&utm_content=mcquiggd/MetaWeather&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://dev.azure.com/mcquiggd/MetaWeather/_apis/build/status/mcquiggd.MetaWeather?branchName=master)](https://dev.azure.com/mcquiggd/MetaWeather/_build/latest?definitionId=1&branchName=master)
@@ -6,7 +6,7 @@
 
 A solution to a coding assessmenent test, with the initial specification that the resulting application should feature an ASP.Net MVC Application with a React front end, with authentication and authorization.
 
-####Design Decisions
+## Design Decisions
 
 D1: As the external API that returns the desired data is:
 
@@ -22,9 +22,7 @@ a. Shared between both the API proxy and React client.
 
 Implement IdentityServer4 as a Secure Token Server (STS).
 
-
-###Implementation
-
+### Implementation
 
 TDD / BDD style for establishing initial "structure", namely interfaces, method signatures, entities and their relationships.
 
@@ -44,15 +42,10 @@ Test and Build history are available at this [link](https://dev.azure.com/mcquig
 
 For full list of technologies utilised, please refer to: 
 
-https://github.com/mcquiggd/MetaWeather/network/dependencies
+[Dependencies](https://github.com/mcquiggd/MetaWeather/network/dependencies)
 
 Feature branches are not deleted after merging to master, to allow viewing of each defined stage of development.
 
 For full list of commits, please refer to:
 
-https://github.com/mcquiggd/MetaWeather/commits/master
-
-
-
-
-
+[Commits](https://github.com/mcquiggd/MetaWeather/commits/master)

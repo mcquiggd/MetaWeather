@@ -21,12 +21,12 @@ namespace MetaWeather.Api
 {
     public class Startup
     {
-        private const string STR_License = "https://example.com/license";
-        private const string STR_Mcquiggd = "https://twitter.com/mcquiggd";
+        const string STR_License = "https://example.com/license";
+        const string STR_Mcquiggd = "https://twitter.com/mcquiggd";
 
         public Startup(IConfiguration configuration) => Configuration = configuration;
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSwagger();
 
@@ -70,6 +70,7 @@ namespace MetaWeather.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+
             // An alternative to IOptions, that enables access within the ConfigureService method
             var apiOptions = new ApiOptions();
             Configuration.GetSection("ApiOptions").Bind(apiOptions);
@@ -81,8 +82,7 @@ namespace MetaWeather.Api
 
             services.AddScoped<IApiProxy, ApiProxy>();
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -105,6 +105,7 @@ namespace MetaWeather.Api
                         Version = "v1",
                         Title = "MetaWeather Api",
                         Description = "Sample Api for Assessment task",
+
                         //TermsOfService = new Uri("https://example.com/terms"),
                         Contact =
                     new OpenApiContact

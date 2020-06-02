@@ -48,4 +48,4 @@ Feature branches are not deleted after merging to master, to allow viewing of ea
 
 For full list of commits, please refer to:
 
-https://github.com/mcquiggd/MetaWeather/commits/master
+[Commits](https://github.com/mcquiggd/MetaWeather/commits/master)

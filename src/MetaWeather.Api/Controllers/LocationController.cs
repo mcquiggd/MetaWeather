@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 
 using MetaWeather.Api.Models;
@@ -17,9 +16,9 @@ namespace MetaWeather.Api.Controllers
     [Authorize]
     public class LocationController : ControllerBase
     {
-        private readonly ApiOptions _apiOptions;
-        private readonly IApiProxy _apiProxy;
-        private readonly ILogger<LocationController> _logger;
+        readonly ApiOptions _apiOptions;
+        readonly IApiProxy _apiProxy;
+        readonly ILogger<LocationController> _logger;
 
         public LocationController(ILogger<LocationController> logger, ApiOptions apiOptions, IApiProxy apiProxy)
         {
@@ -39,6 +38,8 @@ namespace MetaWeather.Api.Controllers
             // Model state validation currently 'implicit' - would implement FluentValidation, to align
             // business rules
             // TODO: Add logic to validate and return correct StatusCode
+
+            _logger.LogTrace("Calling Post with parameter {locationRequest}", locationRequest);
 
             var result = await _apiProxy.SubmitLocationRequest(locationRequest).ConfigureAwait(false);
 

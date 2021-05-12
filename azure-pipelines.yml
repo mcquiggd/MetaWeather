@@ -12,7 +12,7 @@ steps:
     - task: UseDotNet@2 
       displayName: "Use .NET Core 5.0.300"
       inputs:
-        version: '5.0.300'
+        version: 5.0.300
         packageType: sdk
 
     - script: dotnet build --configuration $(buildConfiguration)

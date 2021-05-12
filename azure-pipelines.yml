@@ -10,9 +10,9 @@ variables:
 steps:
 
     - task: UseDotNet@2 
-      displayName: "Use .NET 5.0.203"
+      displayName: "Use .NET version from global.json"
       inputs:
-        version: 5.0.203
+        useGlobalJson:  true
         packageType: sdk
 
     - script: dotnet build --configuration $(buildConfiguration)

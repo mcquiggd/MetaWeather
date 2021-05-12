@@ -10,9 +10,9 @@ variables:
 steps:
 
     - task: UseDotNet@2 
-      displayName: "Use .NET Core 5.x"
+      displayName: "Use .NET 5.0.203"
       inputs:
-        version: 5.x
+        version: 5.0.203
         packageType: sdk
 
     - script: dotnet build --configuration $(buildConfiguration)

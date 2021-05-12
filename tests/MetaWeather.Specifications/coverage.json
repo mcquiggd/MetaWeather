@@ -1,0 +1,1994 @@
+{
+  "MetaWeather.Api.dll": {
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Pages/Error.cshtml.cs": {
+      "MetaWeather.STS.Pages.ErrorModel": {
+        "System.String MetaWeather.STS.Pages.ErrorModel::get_RequestId()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean MetaWeather.STS.Pages.ErrorModel::get_ShowRequestId()": {
+          "Lines": {
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void MetaWeather.STS.Pages.ErrorModel::OnGet()": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 8,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 20,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void MetaWeather.STS.Pages.ErrorModel::.ctor(Microsoft.Extensions.Logging.ILogger`1<MetaWeather.STS.Pages.ErrorModel>)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Data/Migrations/00000000000000_CreateIdentitySchema.cs": {
+      "MetaWeather.STS.Data.Migrations.CreateIdentitySchema": {
+        "System.Void MetaWeather.STS.Data.Migrations.CreateIdentitySchema::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "12": 0,
+            "14": 0,
+            "16": 0,
+            "18": 0,
+            "20": 0,
+            "22": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.Void MetaWeather.STS.Data.Migrations.CreateIdentitySchema::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "168": 0,
+            "169": 0,
+            "170": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "175": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "186": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "192": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "205": 0,
+            "207": 0,
+            "209": 0,
+            "210": 0,
+            "211": 0,
+            "212": 0,
+            "214": 0,
+            "215": 0,
+            "216": 0,
+            "217": 0,
+            "219": 0,
+            "221": 0,
+            "222": 0,
+            "223": 0,
+            "225": 0,
+            "226": 0,
+            "227": 0,
+            "228": 0,
+            "229": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs": {
+      "MetaWeather.STS.Data.Migrations.CreateIdentitySchema": {
+        "System.Void MetaWeather.STS.Data.Migrations.CreateIdentitySchema::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "18": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0,
+            "169": 0,
+            "170": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "175": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "195": 0,
+            "196": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 0,
+            "211": 0,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "215": 0,
+            "216": 0,
+            "218": 0,
+            "219": 0,
+            "220": 0,
+            "221": 0,
+            "222": 0,
+            "223": 0,
+            "224": 0,
+            "225": 0,
+            "226": 0,
+            "227": 0,
+            "228": 0,
+            "229": 0,
+            "230": 0,
+            "231": 0,
+            "232": 0,
+            "233": 0,
+            "234": 0,
+            "235": 0,
+            "236": 0,
+            "237": 0,
+            "238": 0,
+            "239": 0,
+            "241": 0,
+            "242": 0,
+            "243": 0,
+            "244": 0,
+            "245": 0,
+            "246": 0,
+            "247": 0,
+            "248": 0,
+            "249": 0,
+            "250": 0,
+            "251": 0,
+            "252": 0,
+            "253": 0,
+            "254": 0,
+            "255": 0,
+            "256": 0,
+            "257": 0,
+            "258": 0,
+            "259": 0,
+            "260": 0,
+            "261": 0,
+            "262": 0,
+            "263": 0,
+            "265": 0,
+            "266": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "270": 0,
+            "271": 0,
+            "272": 0,
+            "273": 0,
+            "274": 0,
+            "275": 0,
+            "276": 0,
+            "277": 0,
+            "278": 0,
+            "280": 0,
+            "281": 0,
+            "282": 0,
+            "283": 0,
+            "284": 0,
+            "285": 0,
+            "286": 0,
+            "287": 0,
+            "288": 0,
+            "289": 0,
+            "290": 0,
+            "291": 0,
+            "292": 0,
+            "293": 0,
+            "294": 0,
+            "295": 0,
+            "296": 0,
+            "297": 0,
+            "298": 0,
+            "299": 0,
+            "301": 0,
+            "302": 0,
+            "303": 0,
+            "304": 0,
+            "305": 0,
+            "306": 0,
+            "307": 0,
+            "308": 0,
+            "310": 0,
+            "311": 0,
+            "312": 0,
+            "313": 0,
+            "314": 0,
+            "315": 0,
+            "316": 0,
+            "317": 0,
+            "319": 0,
+            "320": 0,
+            "321": 0,
+            "322": 0,
+            "323": 0,
+            "324": 0,
+            "325": 0,
+            "326": 0,
+            "328": 0,
+            "329": 0,
+            "330": 0,
+            "331": 0,
+            "332": 0,
+            "333": 0,
+            "334": 0,
+            "335": 0,
+            "336": 0,
+            "337": 0,
+            "338": 0,
+            "339": 0,
+            "340": 0,
+            "341": 0,
+            "343": 0,
+            "344": 0,
+            "345": 0,
+            "346": 0,
+            "347": 0,
+            "348": 0,
+            "349": 0,
+            "350": 0,
+            "352": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Data/Migrations/ApplicationDbContextModelSnapshot.cs": {
+      "MetaWeather.STS.Data.Migrations.ApplicationDbContextModelSnapshot": {
+        "System.Void MetaWeather.STS.Data.Migrations.ApplicationDbContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "167": 0,
+            "168": 0,
+            "169": 0,
+            "170": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "175": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "191": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "196": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 0,
+            "211": 0,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "216": 0,
+            "217": 0,
+            "218": 0,
+            "219": 0,
+            "220": 0,
+            "221": 0,
+            "222": 0,
+            "223": 0,
+            "224": 0,
+            "225": 0,
+            "226": 0,
+            "227": 0,
+            "228": 0,
+            "229": 0,
+            "230": 0,
+            "231": 0,
+            "232": 0,
+            "233": 0,
+            "234": 0,
+            "235": 0,
+            "236": 0,
+            "237": 0,
+            "239": 0,
+            "240": 0,
+            "241": 0,
+            "242": 0,
+            "243": 0,
+            "244": 0,
+            "245": 0,
+            "246": 0,
+            "247": 0,
+            "248": 0,
+            "249": 0,
+            "250": 0,
+            "251": 0,
+            "252": 0,
+            "253": 0,
+            "254": 0,
+            "255": 0,
+            "256": 0,
+            "257": 0,
+            "258": 0,
+            "259": 0,
+            "260": 0,
+            "261": 0,
+            "263": 0,
+            "264": 0,
+            "265": 0,
+            "266": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "270": 0,
+            "271": 0,
+            "272": 0,
+            "273": 0,
+            "274": 0,
+            "275": 0,
+            "276": 0,
+            "278": 0,
+            "279": 0,
+            "280": 0,
+            "281": 0,
+            "282": 0,
+            "283": 0,
+            "284": 0,
+            "285": 0,
+            "286": 0,
+            "287": 0,
+            "288": 0,
+            "289": 0,
+            "290": 0,
+            "291": 0,
+            "292": 0,
+            "293": 0,
+            "294": 0,
+            "295": 0,
+            "296": 0,
+            "297": 0,
+            "299": 0,
+            "300": 0,
+            "301": 0,
+            "302": 0,
+            "303": 0,
+            "304": 0,
+            "305": 0,
+            "306": 0,
+            "308": 0,
+            "309": 0,
+            "310": 0,
+            "311": 0,
+            "312": 0,
+            "313": 0,
+            "314": 0,
+            "315": 0,
+            "317": 0,
+            "318": 0,
+            "319": 0,
+            "320": 0,
+            "321": 0,
+            "322": 0,
+            "323": 0,
+            "324": 0,
+            "326": 0,
+            "327": 0,
+            "328": 0,
+            "329": 0,
+            "330": 0,
+            "331": 0,
+            "332": 0,
+            "333": 0,
+            "334": 0,
+            "335": 0,
+            "336": 0,
+            "337": 0,
+            "338": 0,
+            "339": 0,
+            "341": 0,
+            "342": 0,
+            "343": 0,
+            "344": 0,
+            "345": 0,
+            "346": 0,
+            "347": 0,
+            "348": 0,
+            "350": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Program.cs": {
+      "MetaWeather.Api.Program": {
+        "Microsoft.Extensions.Hosting.IHostBuilder MetaWeather.Api.Program::CreateHostBuilder(System.String[])": {
+          "Lines": {
+            "9": 0,
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Void MetaWeather.Api.Program::Main(System.String[])": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Startup.cs": {
+      "MetaWeather.Api.Startup": {
+        "System.Void MetaWeather.Api.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0
+          },
+          "Branches": [
+            {
+              "Line": 35,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 73,
+              "EndOffset": 93,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 64,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 64,
+              "Offset": 31,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void MetaWeather.Api.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "72": 0,
+            "75": 0,
+            "76": 0,
+            "78": 0,
+            "80": 0,
+            "81": 0,
+            "83": 0,
+            "85": 0,
+            "87": 0,
+            "88": 0,
+            "90": 0,
+            "92": 0,
+            "94": 0,
+            "95": 0,
+            "98": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.Extensions.Configuration.IConfiguration MetaWeather.Api.Startup::get_Configuration()": {
+          "Lines": {
+            "144": 0
+          },
+          "Branches": []
+        },
+        "System.Void MetaWeather.Api.Startup::.ctor(Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "27": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Models/ApiOptions.cs": {
+      "MetaWeather.Api.Models.ApiOptions": {
+        "System.String MetaWeather.Api.Models.ApiOptions::get_ApiUrl()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Api.Models.ApiOptions::get_Audience()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Api.Models.ApiOptions::get_Authority()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 MetaWeather.Api.Models.ApiOptions::get_MaxRecords()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Data/ApplicationDbContext.cs": {
+      "MetaWeather.Api.Data.ApplicationDbContext": {
+        "System.Void MetaWeather.Api.Data.ApplicationDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions,Microsoft.Extensions.Options.IOptions`1<IdentityServer4.EntityFramework.Options.OperationalStoreOptions>)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Controllers/ErrorController.cs": {
+      "MetaWeather.Api.Controllers.ErrorController": {
+        "Microsoft.AspNetCore.Mvc.IActionResult MetaWeather.Api.Controllers.ErrorController::Error()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult MetaWeather.Api.Controllers.ErrorController::ErrorLocalDevelopment(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "25": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 19,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Controllers/IdentityController.cs": {
+      "MetaWeather.Api.Controllers.IdentityController": {
+        "Microsoft.AspNetCore.Mvc.IActionResult MetaWeather.Api.Controllers.IdentityController::Get()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Controllers/LocationController.cs": {
+      "MetaWeather.Api.Controllers.LocationController": {
+        "System.Void MetaWeather.Api.Controllers.LocationController::.ctor(Microsoft.Extensions.Logging.ILogger`1<MetaWeather.Api.Controllers.LocationController>,MetaWeather.Api.Models.ApiOptions,MetaWeather.Core.Interfaces.IApiProxy)": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 18,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "MetaWeather.Api.Controllers.LocationController/<Post>d__4": {
+        "System.Void MetaWeather.Api.Controllers.LocationController/<Post>d__4::MoveNext()": {
+          "Lines": {
+            "37": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "46": 0,
+            "48": 0,
+            "49": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Controllers/OidcConfigurationController.cs": {
+      "MetaWeather.Api.Controllers.OidcConfigurationController": {
+        "Microsoft.AspNetCore.Mvc.IActionResult MetaWeather.Api.Controllers.OidcConfigurationController::GetClientRequestParameters(System.String)": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.ApiAuthorization.IdentityServer.IClientRequestParametersProvider MetaWeather.Api.Controllers.OidcConfigurationController::get_ClientRequestParametersProvider()": {
+          "Lines": {
+            "25": 0
+          },
+          "Branches": []
+        },
+        "System.Void MetaWeather.Api.Controllers.OidcConfigurationController::.ctor(Microsoft.AspNetCore.ApiAuthorization.IdentityServer.IClientRequestParametersProvider,Microsoft.Extensions.Logging.ILogger`1<MetaWeather.Api.Controllers.OidcConfigurationController>)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Controllers/WeatherController.cs": {
+      "MetaWeather.Api.Controllers.WeatherController": {
+        "System.Void MetaWeather.Api.Controllers.WeatherController::.ctor(Microsoft.Extensions.Logging.ILogger`1<MetaWeather.Api.Controllers.WeatherController>,MetaWeather.Api.Models.ApiOptions,MetaWeather.Core.Interfaces.IApiProxy)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 18,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "MetaWeather.Api.Controllers.WeatherController/<Post>d__4": {
+        "System.Void MetaWeather.Api.Controllers.WeatherController/<Post>d__4::MoveNext()": {
+          "Lines": {
+            "40": 0,
+            "44": 0,
+            "46": 0,
+            "47": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "MetaWeather.Api.Views.dll": {
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Pages/Error.cshtml": {
+      "MetaWeather.STS.Pages.Pages_Error/<ExecuteAsync>d__0": {
+        "System.Void MetaWeather.STS.Pages.Pages_Error/<ExecuteAsync>d__0::MoveNext()": {
+          "Lines": {
+            "4": 0,
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "15": 0
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 70,
+              "EndOffset": 72,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 70,
+              "EndOffset": 136,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Api/Pages/Shared/_LoginPartial.cshtml": {
+      "MetaWeather.STS.Pages.Shared.Pages_Shared__LoginPartial/<ExecuteAsync>d__18": {
+        "System.Void MetaWeather.STS.Pages.Shared.Pages_Shared__LoginPartial/<ExecuteAsync>d__18::MoveNext()": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "16": 0,
+            "17": 0,
+            "26": 0,
+            "28": 0,
+            "30": 0,
+            "33": 0,
+            "35": 0
+          },
+          "Branches": [
+            {
+              "Line": 9,
+              "Offset": 162,
+              "EndOffset": 164,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 9,
+              "Offset": 162,
+              "EndOffset": 193,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 239,
+              "EndOffset": 244,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 665,
+              "EndOffset": 667,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 665,
+              "EndOffset": 779,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 1159,
+              "EndOffset": 1161,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 1159,
+              "EndOffset": 1194,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 1407,
+              "EndOffset": 1409,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 1407,
+              "EndOffset": 1521,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 239,
+              "EndOffset": 1599,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 1875,
+              "EndOffset": 1877,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 1875,
+              "EndOffset": 1910,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 2198,
+              "EndOffset": 2200,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 2198,
+              "EndOffset": 2312,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 2642,
+              "EndOffset": 2644,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 2642,
+              "EndOffset": 2677,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 33,
+              "Offset": 2965,
+              "EndOffset": 2967,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 33,
+              "Offset": 2965,
+              "EndOffset": 3079,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "MetaWeather.STS.Pages.Shared.Pages_Shared__LoginPartial/<<ExecuteAsync>b__18_0>d": {
+        "System.Void MetaWeather.STS.Pages.Shared.Pages_Shared__LoginPartial/<<ExecuteAsync>b__18_0>d::MoveNext()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "MetaWeather.Application.dll": {
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Application/ApiProxy.cs": {
+      "MetaWeather.Application.ApiProxy": {
+        "System.Void MetaWeather.Application.ApiProxy::.ctor(MetaWeather.Application.IMetaWeatherService)": {
+          "Lines": {
+            "16": 32
+          },
+          "Branches": []
+        }
+      },
+      "MetaWeather.Application.ApiProxy/<SubmitLocationRequest>d__2": {
+        "System.Void MetaWeather.Application.ApiProxy/<SubmitLocationRequest>d__2::MoveNext()": {
+          "Lines": {
+            "19": 4,
+            "21": 4,
+            "22": 4,
+            "23": 4,
+            "24": 4,
+            "25": 4,
+            "26": 2,
+            "27": 2,
+            "30": 2,
+            "31": 0,
+            "32": 0,
+            "35": 2,
+            "37": 0,
+            "38": 0,
+            "40": 0,
+            "42": 4
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 194,
+              "EndOffset": 196,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 25,
+              "Offset": 194,
+              "EndOffset": 234,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 30,
+              "Offset": 257,
+              "EndOffset": 259,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 257,
+              "EndOffset": 291,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "MetaWeather.Application.ApiProxy/<SubmitWeatherRequest>d__3": {
+        "System.Void MetaWeather.Application.ApiProxy/<SubmitWeatherRequest>d__3::MoveNext()": {
+          "Lines": {
+            "45": 4,
+            "47": 4,
+            "48": 4,
+            "49": 4,
+            "50": 4,
+            "51": 4,
+            "52": 2,
+            "53": 2,
+            "56": 2,
+            "58": 2,
+            "59": 0,
+            "60": 0,
+            "63": 2,
+            "64": 2,
+            "65": 2,
+            "66": 2,
+            "67": 2,
+            "69": 0,
+            "70": 0,
+            "72": 0,
+            "74": 4
+          },
+          "Branches": [
+            {
+              "Line": 51,
+              "Offset": 194,
+              "EndOffset": 196,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 51,
+              "Offset": 194,
+              "EndOffset": 234,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 58,
+              "Offset": 274,
+              "EndOffset": 276,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 58,
+              "Offset": 274,
+              "EndOffset": 308,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    }
+  },
+  "MetaWeather.Core.dll": {
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Core/Entities/Forecast.cs": {
+      "MetaWeather.Core.Entities.Forecast": {
+        "System.DateTimeOffset MetaWeather.Core.Entities.Forecast::get_ApplicableDate()": {
+          "Lines": {
+            "9": 40
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.Forecast::get_DayOfWeek()": {
+          "Lines": {
+            "11": 10
+          },
+          "Branches": []
+        },
+        "System.Decimal MetaWeather.Core.Entities.Forecast::get_TheTemp()": {
+          "Lines": {
+            "13": 30
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.Forecast::get_WeatherStateAbbr()": {
+          "Lines": {
+            "15": 40
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.Forecast::get_WeatherStateImageURL()": {
+          "Lines": {
+            "17": 10
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.Forecast::get_WeatherStateName()": {
+          "Lines": {
+            "19": 30
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Core/Entities/Location.cs": {
+      "MetaWeather.Core.Entities.Location": {
+        "System.String MetaWeather.Core.Entities.Location::get_LatLong()": {
+          "Lines": {
+            "7": 6
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.Location::get_LocationType()": {
+          "Lines": {
+            "9": 9
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.Location::get_Title()": {
+          "Lines": {
+            "11": 9
+          },
+          "Branches": []
+        },
+        "System.Int32 MetaWeather.Core.Entities.Location::get_WoeId()": {
+          "Lines": {
+            "13": 11
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Core/Entities/LocationRequest.cs": {
+      "MetaWeather.Core.Entities.LocationRequest": {
+        "System.String MetaWeather.Core.Entities.LocationRequest::get_CityName()": {
+          "Lines": {
+            "7": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Core/Entities/LocationResponse.cs": {
+      "MetaWeather.Core.Entities.LocationResponse": {
+        "System.Collections.Generic.List`1<MetaWeather.Core.Entities.Location> MetaWeather.Core.Entities.LocationResponse::get_Locations()": {
+          "Lines": {
+            "9": 22
+          },
+          "Branches": []
+        },
+        "System.Net.HttpStatusCode MetaWeather.Core.Entities.LocationResponse::get_StatusCode()": {
+          "Lines": {
+            "11": 12
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Core/Entities/WeatherRequest.cs": {
+      "MetaWeather.Core.Entities.WeatherRequest": {
+        "System.Int32 MetaWeather.Core.Entities.WeatherRequest::get_WoeId()": {
+          "Lines": {
+            "7": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/src/MetaWeather.Core/Entities/WeatherResponse.cs": {
+      "MetaWeather.Core.Entities.WeatherResponse": {
+        "System.Collections.Generic.List`1<MetaWeather.Core.Entities.Forecast> MetaWeather.Core.Entities.WeatherResponse::get_Forecasts()": {
+          "Lines": {
+            "10": 36
+          },
+          "Branches": []
+        },
+        "System.Net.HttpStatusCode MetaWeather.Core.Entities.WeatherResponse::get_StatusCode()": {
+          "Lines": {
+            "12": 16
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset MetaWeather.Core.Entities.WeatherResponse::get_Time()": {
+          "Lines": {
+            "14": 5
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.WeatherResponse::get_TimeZone()": {
+          "Lines": {
+            "16": 5
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.WeatherResponse::get_TimeZoneName()": {
+          "Lines": {
+            "18": 5
+          },
+          "Branches": []
+        },
+        "System.String MetaWeather.Core.Entities.WeatherResponse::get_Title()": {
+          "Lines": {
+            "20": 5
+          },
+          "Branches": []
+        },
+        "System.Int64 MetaWeather.Core.Entities.WeatherResponse::get_WoeId()": {
+          "Lines": {
+            "22": 5
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "MetaWeather.Tests.Common.dll": {
+    "/mnt/c/Code/Personal/MetaWeather/tests/MetaWeather.Tests.Common/obj/Debug/net5.0/MetaWeather.Tests.Common.Program.cs": {
+      "AutoGeneratedProgram": {
+        "System.Void AutoGeneratedProgram::Main(System.String[])": {
+          "Lines": {
+            "3": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/tests/MetaWeather.Tests.Common/AutoNSubstituteDataAttribute.cs": {
+      "MetaWeather.Tests.Common.AutoNSubstituteDataAttribute": {
+        "System.Void MetaWeather.Tests.Common.AutoNSubstituteDataAttribute::.ctor()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/tests/MetaWeather.Tests.Common/TestLocationResponseBuilder.cs": {
+      "MetaWeather.Tests.Common.TestLocationResponseBuilder": {
+        "MetaWeather.Core.Entities.LocationResponse MetaWeather.Tests.Common.TestLocationResponseBuilder::Build()": {
+          "Lines": {
+            "21": 0
+          },
+          "Branches": []
+        },
+        "MetaWeather.Tests.Common.TestLocationResponseBuilder MetaWeather.Tests.Common.TestLocationResponseBuilder::Default()": {
+          "Lines": {
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "36": 2,
+            "37": 2
+          },
+          "Branches": []
+        },
+        "MetaWeather.Tests.Common.TestLocationResponseBuilder MetaWeather.Tests.Common.TestLocationResponseBuilder::WithBelfast()": {
+          "Lines": {
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1
+          },
+          "Branches": []
+        },
+        "MetaWeather.Tests.Common.TestLocationResponseBuilder MetaWeather.Tests.Common.TestLocationResponseBuilder::WithBirmingham()": {
+          "Lines": {
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "58": 1,
+            "59": 1
+          },
+          "Branches": []
+        },
+        "MetaWeather.Tests.Common.TestLocationResponseBuilder MetaWeather.Tests.Common.TestLocationResponseBuilder::WithStatusCode(System.Net.HttpStatusCode)": {
+          "Lines": {
+            "62": 0,
+            "63": 0,
+            "65": 0,
+            "66": 0
+          },
+          "Branches": []
+        }
+      },
+      "MetaWeather.Tests.Common.TestLocationResponseBuilder/<BuildHttpResponse>d__2": {
+        "System.Void MetaWeather.Tests.Common.TestLocationResponseBuilder/<BuildHttpResponse>d__2::MoveNext()": {
+          "Lines": {
+            "24": 2,
+            "25": 2,
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/mnt/c/Code/Personal/MetaWeather/tests/MetaWeather.Tests.Common/TestWeatherResponseBuilder.cs": {
+      "MetaWeather.Tests.Common.TestWeatherResponseBuilder": {
+        "System.Void MetaWeather.Tests.Common.TestWeatherResponseBuilder::CreateFiveForecasts()": {
+          "Lines": {
+            "24": 2,
+            "25": 24,
+            "26": 10,
+            "27": 10,
+            "28": 10,
+            "29": 10,
+            "30": 10,
+            "31": 10,
+            "32": 10,
+            "33": 10,
+            "34": 10,
+            "35": 10,
+            "36": 2
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 106,
+              "EndOffset": 5,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 10
+            },
+            {
+              "Line": 25,
+              "Offset": 106,
+              "EndOffset": 108,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            }
+          ]
+        },
+        "MetaWeather.Core.Entities.WeatherResponse MetaWeather.Tests.Common.TestWeatherResponseBuilder::Build()": {
+          "Lines": {
+            "38": 0
+          },
+          "Branches": []
+        },
+        "MetaWeather.Tests.Common.TestWeatherResponseBuilder MetaWeather.Tests.Common.TestWeatherResponseBuilder::Default()": {
+          "Lines": {
+            "49": 2,
+            "50": 2,
+            "52": 2,
+            "53": 2
+          },
+          "Branches": []
+        },
+        "MetaWeather.Tests.Common.TestWeatherResponseBuilder MetaWeather.Tests.Common.TestWeatherResponseBuilder::WithBelfast()": {
+          "Lines": {
+            "56": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "67": 1,
+            "69": 1,
+            "70": 1
+          },
+          "Branches": []
+        },
+        "MetaWeather.Tests.Common.TestWeatherResponseBuilder MetaWeather.Tests.Common.TestWeatherResponseBuilder::WithBirmingham()": {
+          "Lines": {
+            "73": 1,
+            "74": 1,
+            "76": 1,
+            "77": 1
+          },
+          "Branches": []
+        },
+        "MetaWeather.Tests.Common.TestWeatherResponseBuilder MetaWeather.Tests.Common.TestWeatherResponseBuilder::WithStatusCode(System.Net.HttpStatusCode)": {
+          "Lines": {
+            "80": 0,
+            "81": 0,
+            "83": 0,
+            "84": 0
+          },
+          "Branches": []
+        }
+      },
+      "MetaWeather.Tests.Common.TestWeatherResponseBuilder/<BuildHttpResponse>d__3": {
+        "System.Void MetaWeather.Tests.Common.TestWeatherResponseBuilder/<BuildHttpResponse>d__3::MoveNext()": {
+          "Lines": {
+            "41": 2,
+            "42": 2,
+            "43": 2,
+            "44": 2,
+            "45": 2,
+            "46": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

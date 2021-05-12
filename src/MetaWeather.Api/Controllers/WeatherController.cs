@@ -1,13 +1,16 @@
-﻿using System;
-using System.Threading.Tasks;
-
+﻿
 using MetaWeather.Api.Models;
 using MetaWeather.Core.Entities;
+
 using MetaWeather.Core.Interfaces;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
+using System;
+using System.Threading.Tasks;
 
 namespace MetaWeather.Api.Controllers
 {
@@ -16,9 +19,9 @@ namespace MetaWeather.Api.Controllers
     [Authorize]
     public class WeatherController : ControllerBase
     {
-        private readonly ApiOptions _apiOptions;
-        private readonly IApiProxy _apiProxy;
-        private readonly ILogger<WeatherController> _logger;
+        readonly ApiOptions _apiOptions;
+        readonly IApiProxy _apiProxy;
+        readonly ILogger<WeatherController> _logger;
 
         public WeatherController(ILogger<WeatherController> logger, ApiOptions apiOptions, IApiProxy apiProxy)
         {

@@ -1,27 +1,26 @@
-﻿using System;
-using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
-using MetaWeather.Core.Entities;
+﻿using MetaWeather.Core.Entities;
 using MetaWeather.Core.Interfaces;
+
 using Refit;
+
+using System;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace MetaWeather.Application
 {
     public class ApiProxy : IApiProxy
     {
-        private readonly IMetaWeatherService _metaWeatherService;
+        readonly IMetaWeatherService _metaWeatherService;
 
-        public ApiProxy(IMetaWeatherService metaWeatherService) => _metaWeatherService = metaWeatherService;
+        public ApiProxy(IMetaWeatherService metaWeatherService) { _metaWeatherService = metaWeatherService; }
 
-        public async Task<LocationResponse> SubmitLocationRequest(ILocationRequest locationRequest
-                                                                  )
+        public async Task<LocationResponse> SubmitLocationRequest(ILocationRequest locationRequest)
         {
             try
             {
-                using(var apiResponse = await _metaWeatherService.GetLocationByCityName(locationRequest.CityName
-                                                                                        )
-                                                  .ConfigureAwait(false))
+                using(var apiResponse = await _metaWeatherService.GetLocationByCityName(locationRequest.CityName)
+                    .ConfigureAwait(false))
                 {
                     if(!apiResponse.IsSuccessStatusCode)
                     {
@@ -37,7 +36,7 @@ namespace MetaWeather.Application
                 }
             } catch(Exception ex) when ((ex is ApiException) || (ex is WebException))
             {
-                //TODO:Log exception
+                //Here we would Log exception
                 return new LocationResponse { StatusCode = HttpStatusCode.InternalServerError, Locations = null };
             }
         }
@@ -46,9 +45,8 @@ namespace MetaWeather.Application
         {
             try
             {
-                using (var apiResponse = await _metaWeatherService.GetWeatherByWoeId(weatherRequest.WoeId
-                                                                        )
-                                  .ConfigureAwait(false))
+                using(var apiResponse = await _metaWeatherService.GetWeatherByWoeId(weatherRequest.WoeId)
+                    .ConfigureAwait(false))
                 {
                     if(!apiResponse.IsSuccessStatusCode)
                     {
@@ -63,11 +61,14 @@ namespace MetaWeather.Application
                     }
 
                     return new WeatherResponse
-                    { StatusCode = HttpStatusCode.OK, Forecasts = apiResponse.Content.Forecasts };
+                    {
+                        StatusCode = HttpStatusCode.OK,
+                        Forecasts = apiResponse.Content.Forecasts
+                    };
                 }
             } catch(Exception ex) when ((ex is ApiException) || (ex is WebException))
             {
-                //TODO:Log exception
+                // Here we would Log exception
                 return new WeatherResponse { StatusCode = HttpStatusCode.InternalServerError, Forecasts = null };
             }
         }
